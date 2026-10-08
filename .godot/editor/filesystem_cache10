@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791472493
+::res://::1791473399
 icon.svg::CompressedTexture2D::1790880795757653::1791341417::1791341678::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1791341233::0::1::::<><><>0<>0<><>::
 ::res://addons/::1791447912
@@ -21,7 +21,7 @@ devlog_editor_recorder.gd::GDScript::5308495565044205611::1791447909::0::1::::<>
 ::res://addons/ziva_agent/zivacode/macos/::1791447909
 ::res://Assets/::1791472492
 ::res://Assets/Animation/::1791472482
-::res://Assets/Animation/Player/::1791472492
+::res://Assets/Animation/Player/::1791472493
 Attack1.png::CompressedTexture2D::1927727162542000458::1791435126::1791472493::1::::<><><>0<>0<>e6fcdaebab3dc73b95d4ff197955a68b<>res://.godot/imported/Attack1.png-1866a9d10c810e1cca868527ca1b9a02.ctex::
 Attack2.png::CompressedTexture2D::7751417650593993500::1791435126::1791472493::1::::<><><>0<>0<>36bd3757bf40ab27e58bd4bbfde464fb<>res://.godot/imported/Attack2.png-b680aaae6157076ba2c8f2cfc9a7b429.ctex::
 Attack3.png::CompressedTexture2D::1186654137391689209::1791435126::1791472493::1::::<><><>0<>0<>24378d2b0e358904d1026ae4f2572962<>res://.godot/imported/Attack3.png-96a868c55915b72e002693cb069edda0.ctex::
@@ -30,9 +30,9 @@ Fall.png::CompressedTexture2D::1713840355329653663::1791435304::1791472493::1:::
 Idle.png::CompressedTexture2D::8934967695619772280::1791435304::1791472493::1::::<><><>0<>0<>59e656275ce8a119efc2c6b650416d84<>res://.godot/imported/Idle.png-f78470f56a585d0ab5aef4fd50e88a3d.ctex::
 Jump.png::CompressedTexture2D::8414328858619400436::1791435304::1791472493::1::::<><><>0<>0<>3d07d38bd063c3a946e426f712e36063<>res://.godot/imported/Jump.png-faa58b83d622db8a08dcd7e43944159d.ctex::
 Run.png::CompressedTexture2D::7334765824463367519::1791435304::1791472493::1::::<><><>0<>0<>ac9113d1b210a17bb7f36adeba6d978b<>res://.godot/imported/Run.png-4ad1fbbcf1a60be3e46d7703d645f761.ctex::
-::res://Entity/::1791472492
+::res://Entity/::1791473390
 player.gd::GDScript::4383987603324072431::1791472371::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Player.tscn::PackedScene::8050125643488991171::1791472492::0::1::::<><><>0<>0<><>::uid://b3pvvuosrglyt::::res://Entity/player.gd<>uid://q53axoyg33rh::::res://Assets/Animation/Player/Attack3.png<>uid://cqyxhjab8uods::::res://Assets/Animation/Player/Death.png<>uid://yogx2q5y40el::::res://Assets/Animation/Player/Fall.png<>uid://d0kfu3c7hk7uq::::res://Assets/Animation/Player/Idle.png<>uid://dr471cukn6wau::::res://Assets/Animation/Player/Jump.png<>uid://2p2nc0ewu355::::res://Assets/Animation/Player/Attack1.png<>uid://dcrary4jr6l3t::::res://Assets/Animation/Player/Run.png<>uid://dio3yl644gjeq::::res://Assets/Animation/Player/Attack2.png
+Player.tscn::PackedScene::8050125643488991171::1791473390::0::1::::<><><>0<>0<><>::uid://b3pvvuosrglyt::::res://Entity/player.gd<>uid://q53axoyg33rh::::res://Assets/Animation/Player/Attack3.png<>uid://cqyxhjab8uods::::res://Assets/Animation/Player/Death.png<>uid://yogx2q5y40el::::res://Assets/Animation/Player/Fall.png<>uid://d0kfu3c7hk7uq::::res://Assets/Animation/Player/Idle.png<>uid://dr471cukn6wau::::res://Assets/Animation/Player/Jump.png<>uid://2p2nc0ewu355::::res://Assets/Animation/Player/Attack1.png<>uid://dcrary4jr6l3t::::res://Assets/Animation/Player/Run.png<>uid://dio3yl644gjeq::::res://Assets/Animation/Player/Attack2.png
 ::res://Levels/::1791465955
 TEST.tscn::PackedScene::9218335759368413955::1791465955::0::1::::<><><>0<>0<><>::uid://dmxsnmsy6ur4v::::res://Entity/Player.tscn
 ::res://SFX/::1791341454

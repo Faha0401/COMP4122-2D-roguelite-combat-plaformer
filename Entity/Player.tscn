@@ -21,14 +21,20 @@ tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.249, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"close_combo_window"
 }, {
 "args": [],
+"method": &"_Toggle_slash_collision"
+}, {
+"args": [],
 "method": &"open_combo_window"
+}, {
+"args": [],
+"method": &"_Toggle_slash_collision"
 }, {
 "args": [],
 "method": &"on_combo_animation_playeration_finished"
@@ -61,14 +67,20 @@ tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.249, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"close_combo_window"
 }, {
 "args": [],
+"method": &"_Toggle_slash_collision"
+}, {
+"args": [],
 "method": &"open_combo_window"
+}, {
+"args": [],
+"method": &"_Toggle_slash_collision"
 }, {
 "args": [],
 "method": &"on_combo_animation_playeration_finished"
@@ -98,14 +110,20 @@ tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.249, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"close_combo_window"
 }, {
 "args": [],
+"method": &"_Toggle_slash_collision"
+}, {
+"args": [],
 "method": &"open_combo_window"
+}, {
+"args": [],
+"method": &"_Toggle_slash_collision"
 }, {
 "args": [],
 "method": &"on_combo_animation_playeration_finished"
@@ -437,9 +455,22 @@ shape = SubResource("CapsuleShape2D_jl6yv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1291288961]
 sprite_frames = SubResource("SpriteFrames_jl6yv")
-animation = &"Run"
+animation = &"Dash"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2018363935]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="DashArea" type="Area2D" parent="." unique_id=1738499997]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DashArea" unique_id=883092765]
+position = Vector2(-8, 0)
+polygon = PackedVector2Array(42, -20, 97, -13, 110, -6, 98, 3, 41, 10, 42, -21)
+disabled = true
+
+[node name="SlashArea" type="Area2D" parent="." unique_id=498668104]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SlashArea" unique_id=1382885490]
+polygon = PackedVector2Array(22, -50, 27, -23, 46, -15, 49, 0, 31, 11, 31, 23, 68, 13, 91, -3, 90, -25, 62, -43)
+disabled = true
