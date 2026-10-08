@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d4lov4qaua0kl"]
+
+[ext_resource type="PackedScene" uid="uid://dmxsnmsy6ur4v" path="res://Entity/Player.tscn" id="1_lsp3k"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lsp3k"]
+
+[node name="Test" type="Node2D" unique_id=78615939]
+
+[node name="Player" parent="." unique_id=358612930 instance=ExtResource("1_lsp3k")]
+position = Vector2(-8, -1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=857640914]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=749357316]
+position = Vector2(-12.999939, 83)
+scale = Vector2(0.8150602, 1.4765345)
+shape = SubResource("WorldBoundaryShape2D_lsp3k")
+debug_color = Color(0.69098544, 0, 0.22546083, 0.41960785)
