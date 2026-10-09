@@ -471,7 +471,7 @@ animation = &"Slash1"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2018363935]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="DashArea" type="Area2D" parent="." unique_id=1738499997 groups=["Damage_area"]]
@@ -505,7 +505,7 @@ color = Color(0.5627902, 0.4039509, 0.96590453, 0.84705883)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1474439121]
 emitting = false
-amount = 100
+amount = 200
 lifetime = 0.4
 one_shot = true
 explosiveness = 1.0

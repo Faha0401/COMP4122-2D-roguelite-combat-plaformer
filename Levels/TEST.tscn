@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d4lov4qaua0kl"]
 
 [ext_resource type="PackedScene" uid="uid://dmxsnmsy6ur4v" path="res://Entity/Player.tscn" id="1_lsp3k"]
+[ext_resource type="PackedScene" uid="uid://5ju75lk20ab3" path="res://Entity/enemy.tscn" id="2_rsspk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lsp3k"]
 
@@ -16,3 +17,6 @@ position = Vector2(-12.999939, 83)
 scale = Vector2(0.8150602, 1.4765345)
 shape = SubResource("WorldBoundaryShape2D_lsp3k")
 debug_color = Color(0.69098544, 0, 0.22546083, 0.41960785)
+
+[node name="Enemy" parent="." unique_id=434107264 instance=ExtResource("2_rsspk")]
+position = Vector2(146, 45)

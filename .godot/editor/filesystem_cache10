@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791473399
+::res://::1791518117
 icon.svg::CompressedTexture2D::1790880795757653::1791341417::1791341678::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1791341233::0::1::::<><><>0<>0<><>::
 ::res://addons/::1791447912
@@ -20,7 +20,14 @@ devlog_editor_recorder.gd::GDScript::5308495565044205611::1791447909::0::1::::<>
 ::res://addons/ziva_agent/zivacode/::1791447909
 ::res://addons/ziva_agent/zivacode/macos/::1791447909
 ::res://Assets/::1791472492
-::res://Assets/Animation/::1791472482
+::res://Assets/Animation/::1791531625
+::res://Assets/Animation/Enemy/::1791531638
+Attack.png::CompressedTexture2D::9021715276272328567::1791531638::1791531639::1::::<><><>0<>0<>9cf0ac799237e4dd3bc693471fd55ac7<>res://.godot/imported/Attack.png-2ac25d8e38634daf2344b5c8ee0e7d97.ctex::
+Death.png::CompressedTexture2D::406931042367838814::1791531638::1791531639::1::::<><><>0<>0<>afbe6a28e75826a7cda980bbf672b1d2<>res://.godot/imported/Death.png-a3003079a8bf20ff81817dec4a80a1d1.ctex::
+Idle.png::CompressedTexture2D::1058673811912565960::1791531638::1791531639::1::::<><><>0<>0<>3652075ad8ff865571d4cf2f14563a89<>res://.godot/imported/Idle.png-a047bb1d5194ceda02d8c79ac917f6f0.ctex::
+Shield.png::CompressedTexture2D::2698897648164432797::1791531638::1791531639::1::::<><><>0<>0<>765110c0fce93625c6d728d66e5ee447<>res://.godot/imported/Shield.png-aa5ece980a378cfc240e4bc571c61407.ctex::
+Take Hit.png::CompressedTexture2D::4851042768203763405::1791531638::1791531639::1::::<><><>0<>0<>cb8a7c67da0ed7d3162ce46589860bd1<>res://.godot/imported/Take Hit.png-d3f2f32d1f43ecc263384ea1ffd68ac0.ctex::
+Walk.png::CompressedTexture2D::3120933512881678772::1791531638::1791531639::1::::<><><>0<>0<>6daf636522f63c70482501746eb94d30<>res://.godot/imported/Walk.png-b7f88466e314c690e0dbbc4f6c59a4b5.ctex::
 ::res://Assets/Animation/Player/::1791472493
 Attack1.png::CompressedTexture2D::1927727162542000458::1791435126::1791472493::1::::<><><>0<>0<>e6fcdaebab3dc73b95d4ff197955a68b<>res://.godot/imported/Attack1.png-1866a9d10c810e1cca868527ca1b9a02.ctex::
 Attack2.png::CompressedTexture2D::7751417650593993500::1791435126::1791472493::1::::<><><>0<>0<>36bd3757bf40ab27e58bd4bbfde464fb<>res://.godot/imported/Attack2.png-b680aaae6157076ba2c8f2cfc9a7b429.ctex::
@@ -30,10 +37,17 @@ Fall.png::CompressedTexture2D::1713840355329653663::1791435304::1791472493::1:::
 Idle.png::CompressedTexture2D::8934967695619772280::1791435304::1791472493::1::::<><><>0<>0<>59e656275ce8a119efc2c6b650416d84<>res://.godot/imported/Idle.png-f78470f56a585d0ab5aef4fd50e88a3d.ctex::
 Jump.png::CompressedTexture2D::8414328858619400436::1791435304::1791472493::1::::<><><>0<>0<>3d07d38bd063c3a946e426f712e36063<>res://.godot/imported/Jump.png-faa58b83d622db8a08dcd7e43944159d.ctex::
 Run.png::CompressedTexture2D::7334765824463367519::1791435304::1791472493::1::::<><><>0<>0<>ac9113d1b210a17bb7f36adeba6d978b<>res://.godot/imported/Run.png-4ad1fbbcf1a60be3e46d7703d645f761.ctex::
-::res://Entity/::1791473390
-player.gd::GDScript::4383987603324072431::1791472371::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Player.tscn::PackedScene::8050125643488991171::1791473390::0::1::::<><><>0<>0<><>::uid://b3pvvuosrglyt::::res://Entity/player.gd<>uid://q53axoyg33rh::::res://Assets/Animation/Player/Attack3.png<>uid://cqyxhjab8uods::::res://Assets/Animation/Player/Death.png<>uid://yogx2q5y40el::::res://Assets/Animation/Player/Fall.png<>uid://d0kfu3c7hk7uq::::res://Assets/Animation/Player/Idle.png<>uid://dr471cukn6wau::::res://Assets/Animation/Player/Jump.png<>uid://2p2nc0ewu355::::res://Assets/Animation/Player/Attack1.png<>uid://dcrary4jr6l3t::::res://Assets/Animation/Player/Run.png<>uid://dio3yl644gjeq::::res://Assets/Animation/Player/Attack2.png
-::res://Levels/::1791465955
-TEST.tscn::PackedScene::9218335759368413955::1791465955::0::1::::<><><>0<>0<><>::uid://dmxsnmsy6ur4v::::res://Entity/Player.tscn
+::res://Entity/::1791531573
+enemy.gd::GDScript::1177418649117835734::1791531573::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemy.tscn::PackedScene::2125517787372566326::1791531569::0::1::::<><><>0<>0<><>::
+player.gd::GDScript::4383987603324072431::1791530445::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Player.tscn::PackedScene::8050125643488991171::1791531042::0::1::::<><><>0<>0<><>::uid://b3pvvuosrglyt::::res://Entity/player.gd<>uid://q53axoyg33rh::::res://Assets/Animation/Player/Attack3.png<>uid://cqyxhjab8uods::::res://Assets/Animation/Player/Death.png<>uid://yogx2q5y40el::::res://Assets/Animation/Player/Fall.png<>uid://d0kfu3c7hk7uq::::res://Assets/Animation/Player/Idle.png<>uid://dr471cukn6wau::::res://Assets/Animation/Player/Jump.png<>uid://2p2nc0ewu355::::res://Assets/Animation/Player/Attack1.png<>uid://dcrary4jr6l3t::::res://Assets/Animation/Player/Run.png<>uid://dio3yl644gjeq::::res://Assets/Animation/Player/Attack2.png<>uid://p2m7tnbu4ce1::::res://Entity/shadow_recorder.gd
+shadow_recorder.gd::GDScript::1109357621347668530::1791519722::0::1::::<>Node<><>0<>0<><>::
+shadow.gd::GDScript::8074544551389252523::1791521605::0::1::::<>Node2D<><>0<>0<><>::
+Shadow.tscn::PackedScene::453541782627602744::1791520045::0::1::::<><><>0<>0<><>::uid://dnbmtl3ftdpah::::res://Entity/shadow.gd<>uid://q53axoyg33rh::::res://Assets/Animation/Player/Attack3.png<>uid://yogx2q5y40el::::res://Assets/Animation/Player/Fall.png<>uid://dr471cukn6wau::::res://Assets/Animation/Player/Jump.png<>uid://d0kfu3c7hk7uq::::res://Assets/Animation/Player/Idle.png<>uid://dcrary4jr6l3t::::res://Assets/Animation/Player/Run.png<>uid://2p2nc0ewu355::::res://Assets/Animation/Player/Attack1.png<>uid://dio3yl644gjeq::::res://Assets/Animation/Player/Attack2.png
+::res://Global/::1791518601
+cooldown.gd::GDScript::6099757851264257129::1791518601::0::1::::<>Node<><>0<>0<><>::
+::res://Levels/::1791516150
+TEST.tscn::PackedScene::9218335759368413955::1791516150::0::1::::<><><>0<>0<><>::uid://dmxsnmsy6ur4v::::res://Entity/Player.tscn
 ::res://SFX/::1791341454
 ::res://UI/::1791341459
