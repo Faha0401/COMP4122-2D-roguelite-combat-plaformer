@@ -254,7 +254,7 @@ animations = [{
 radius = 39.012817
 
 [node name="Shadow" type="Node2D" unique_id=2068816184]
-modulate = Color(0.38431373, 0.36862746, 0.654902, 0.38039216)
+modulate = Color(0.33529744, 0.3189143, 0.5874011, 0.38039216)
 script = ExtResource("1_8h4x8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1301145680]

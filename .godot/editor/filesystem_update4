@@ -4,3 +4,4 @@ res://Entity/Shadow.tscn
 res://Entity/shadow.gd
 res://Entity/shadow_recorder.gd
 res://Levels/TEST.tscn
+res://Global/cooldown.gd

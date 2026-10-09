@@ -13,12 +13,8 @@ var timer : float = 0.0
 func _ready() -> void:
 	player = get_parent()
 	snapshots.resize(size) 
-
-	snapshots[0] = {
-		"position": player.global_position,
-		"animation": animated_sprite_2d.animation,
-		"flip_h": animated_sprite_2d.flip_h
-	}
+	init()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,7 +23,8 @@ func _process(delta: float) -> void:
 	if timer < INTERVAL: # Not yet enough frame before a snapshot
 		return
 	timer = 0.0
-	_record()
+	if player != null && player.Shadow != null:
+		_record()
 
 func _record():
 	snapshots.append({
@@ -37,3 +34,14 @@ func _record():
 	})
 	if snapshots.size() > size:
 		snapshots.pop_front()
+		
+func init():
+	snapshots[0] = {
+		"position": player.global_position,
+		"animation": animated_sprite_2d.animation,
+		"flip_h": animated_sprite_2d.flip_h
+	}
+	
+func _clear_cache():
+	snapshots.clear()
+	snapshots.resize(size)
