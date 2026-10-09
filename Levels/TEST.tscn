@@ -7,7 +7,7 @@
 [node name="Test" type="Node2D" unique_id=78615939]
 
 [node name="Player" parent="." unique_id=358612930 instance=ExtResource("1_lsp3k")]
-position = Vector2(-8, -1)
+position = Vector2(-10, 57)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=857640914]
 

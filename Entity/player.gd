@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#Player var######################################################
 enum ComboState { NONE, SLASH_1, SLASH_2, DASH }
 var combo_state: ComboState = ComboState.NONE
 var combo_window_open: bool = false
@@ -21,12 +22,23 @@ var face = 1
 @onready var Slash_area: CollisionPolygon2D = $SlashArea/CollisionPolygon2D
 @onready var Dash_area: CollisionPolygon2D = $DashArea/CollisionPolygon2D
 
+#Shadow var######################################################
+var Shadow: Node2D
+var record_timer: float = 0.0
+@onready var recorder: Node2D = $Recorder
 
+#Player func######################################################
+func _ready() -> void:
+	_spawn_shadow()
+	
+	
 func _physics_process(delta: float) -> void:
 	_delta = delta
 	_movement(delta)
 	move_and_slide()
 	_update_animation()
+	_snapshot()
+
 	
 func _input(event):
 	if event.is_action_pressed("Attack"):
@@ -125,7 +137,6 @@ func _advance_combo():
 			combo_window_open = false
 			combo_queued = false
 			animated_sprite_2d.play("Idle")
-
 	
 func _flip_player():
 	animated_sprite_2d.flip_h = direction < 0	 #If left so direction = -1 <0 then flip_h = true
@@ -137,15 +148,30 @@ func _Toggle_slash_collision():
 	match combo_state:
 		ComboState.SLASH_1:
 			Slash_area.disabled = !Slash_area.disabled
-			print("Toggled! ", Slash_area.disabled)
 		ComboState.SLASH_2:
 			Slash_area.disabled = !Slash_area.disabled
-			print("Toggled! ", Slash_area.disabled)
 		ComboState.DASH:
 			Dash_area.disabled = !Dash_area.disabled
-			print("Toggled! ", Dash_area.disabled)
 		
 func _lurch():
 	Lurch_speed = 300 * face
 	Lurch_timer = LURCH_DURATION
 	
+
+	
+#Shadow func######################################################
+func _spawn_shadow():
+	Shadow = preload("res://Entity/Shadow.tscn").instantiate()
+	add_child(Shadow)
+	Shadow.visible = true
+	Shadow.top_level = true # !!!! Make it top level so it's a canvas item but not following the child
+	
+func _kill_shadow():
+	Shadow.queue_free()
+	
+func _snapshot():
+	if record_timer < recorder.INTERVAL:
+		record_timer += _delta
+	record_timer = 0.0
+	if (recorder.snapshots[0] != null):
+		Shadow._copy(recorder.snapshots[0])
