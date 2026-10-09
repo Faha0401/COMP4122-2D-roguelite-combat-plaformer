@@ -22,6 +22,7 @@ var rewind_cooldown = 0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var Slash_area: CollisionPolygon2D = $SlashArea/CollisionPolygon2D
 @onready var Dash_area: CollisionPolygon2D = $DashArea/CollisionPolygon2D
+@onready var Explotion_particle: CPUParticles2D = $CPUParticles2D
 
 #Shadow var######################################################
 var Shadow: Node2D
@@ -170,6 +171,7 @@ func _rewind():
 		position = Shadow.position
 		animated_sprite_2d.flip_h = Shadow.animated_sprite_2d.flip_h
 		animated_sprite_2d.animation = Shadow.animated_sprite_2d.animation
+		Explotion_particle.emitting = true
 		_kill_shadow()
 	
 #Shadow func######################################################

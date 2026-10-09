@@ -443,6 +443,10 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Curve" id="Curve_jl6yv"]
+_data = [Vector2(0.14918032, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.06822264), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Player" type="CharacterBody2D" unique_id=358612930]
 script = ExtResource("1_lf38l")
 
@@ -478,3 +482,20 @@ disabled = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SlashArea" unique_id=1382885490]
 polygon = PackedVector2Array(22, -50, 27, -23, 46, -15, 49, 0, 31, 11, 31, 23, 68, 13, 91, -3, 90, -25, 62, -43)
 disabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1474439121]
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(10, 10)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_jl6yv")
