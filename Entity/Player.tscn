@@ -447,6 +447,10 @@ animations = [{
 _data = [Vector2(0.14918032, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.06822264), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Gradient" id="Gradient_055li"]
+offsets = PackedFloat32Array(0.16726619, 0.544964, 1)
+colors = PackedColorArray(0.46149528, 0.2567836, 0.62098956, 1, 0.7652317, 0.6130408, 0.9056669, 1, 1, 1, 1, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=358612930]
 script = ExtResource("1_lf38l")
 
@@ -463,7 +467,7 @@ shape = SubResource("CapsuleShape2D_jl6yv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1291288961]
 sprite_frames = SubResource("SpriteFrames_jl6yv")
-animation = &"Idle"
+animation = &"Slash1"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2018363935]
@@ -483,13 +487,29 @@ disabled = true
 polygon = PackedVector2Array(22, -50, 27, -23, 46, -15, 49, 0, 31, 11, 31, 23, 68, 13, 91, -3, 90, -25, 62, -43)
 disabled = true
 
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1091476013]
+emitting = false
+amount = 100
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+emission_shape = 6
+emission_ring_inner_radius = 0.8
+emission_ring_radius = 1.0
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+color = Color(0.5627902, 0.4039509, 0.96590453, 0.84705883)
+
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1474439121]
 emitting = false
 amount = 100
-lifetime = 0.5
+lifetime = 0.4
 one_shot = true
 explosiveness = 1.0
-randomness = 0.3
+lifetime_randomness = 0.5
 emission_shape = 3
 emission_rect_extents = Vector2(10, 10)
 spread = 180.0
@@ -497,5 +517,7 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 50.0
 initial_velocity_max = 100.0
 scale_amount_min = 2.0
-scale_amount_max = 2.0
+scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_jl6yv")
+color_ramp = SubResource("Gradient_055li")
+color_initial_ramp = SubResource("Gradient_055li")
