@@ -173,7 +173,7 @@ func _rewind():
 		animated_sprite_2d.flip_h = Shadow.animated_sprite_2d.flip_h
 		animated_sprite_2d.animation = Shadow.animated_sprite_2d.animation
 		Rewind_particle.emitting = true
-		#Explosion_particle.emitting = true
+		Explosion_particle.emitting = true
 		_kill_shadow()
 	
 #Shadow func######################################################

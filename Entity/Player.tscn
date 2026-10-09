@@ -467,7 +467,7 @@ shape = SubResource("CapsuleShape2D_jl6yv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1291288961]
 sprite_frames = SubResource("SpriteFrames_jl6yv")
-animation = &"Idle"
+animation = &"Slash1"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2018363935]
