@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5ju75lk20ab3"]
 
-[ext_resource type="Script" uid="uid://xupmqjvjdrg" path="res://Entity/enemy.gd" id="1_xiv4n"]
+[ext_resource type="Script" uid="uid://q1l6btt0ys2i" path="res://Entity/enemy.gd" id="1_xiv4n"]
 [ext_resource type="Texture2D" uid="uid://d1sglknatfh3l" path="res://Assets/Animation/Enemy/Attack.png" id="1_xmr05"]
 [ext_resource type="Texture2D" uid="uid://f2edhut61s1c" path="res://Assets/Animation/Enemy/Death.png" id="2_xiv4n"]
 [ext_resource type="Texture2D" uid="uid://pc3g5xa6qh5a" path="res://Assets/Animation/Enemy/Idle.png" id="3_tmufy"]

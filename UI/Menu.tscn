@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c1b2qouc71ng5"]
+
+[ext_resource type="Texture2D" uid="uid://45mj7sldxl3s" path="res://Assets/UI/FreeHorrorUi.png" id="1_gda05"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_axeig"]
+size = Vector2(200, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axeig"]
+atlas = ExtResource("1_gda05")
+region = Rect2(6, 138, 52, 15)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h7hgu"]
+load_path = "res://.godot/imported/FreeHorrorUi.png-26ca8ca128858d7c528c32af1729ee4e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2m7h"]
+atlas = SubResource("CompressedTexture2D_h7hgu")
+region = Rect2(6, 170, 52, 15)
+
+[node name="Menu" type="Control" unique_id=1662933080]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=148670503]
+
+[node name="CenterRow" type="CenterContainer" parent="CanvasLayer" unique_id=1933953138]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainContainer" type="VBoxContainer" parent="CanvasLayer/CenterRow" unique_id=1209707056]
+layout_mode = 2
+alignment = 1
+
+[node name="GameName" type="TextureRect" parent="CanvasLayer/CenterRow/MainContainer" unique_id=471309581]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_axeig")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/CenterRow/MainContainer" unique_id=2024194928]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("AtlasTexture_axeig")
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/CenterRow/MainContainer" unique_id=101332754]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("AtlasTexture_f2m7h")

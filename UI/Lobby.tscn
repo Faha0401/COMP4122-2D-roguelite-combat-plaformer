@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dpwnwd4qxbyg8"]
+
+[ext_resource type="PackedScene" uid="uid://c0ijn4qa8eu15" path="res://UI/HUD.tscn" id="1_o281y"]
+
+[node name="Lobby" type="Control" unique_id=1057901401]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HUD" parent="." unique_id=1716741088 instance=ExtResource("1_o281y")]

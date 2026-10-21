@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://c0ijn4qa8eu15"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_il0fu"]
+load_path = "res://.godot/imported/FreeHorrorUi.png-26ca8ca128858d7c528c32af1729ee4e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yixhe"]
+atlas = SubResource("CompressedTexture2D_il0fu")
+region = Rect2(6, 138, 52, 15)
+
+[node name="HUD" type="CanvasLayer" unique_id=1536462385]
+
+[node name="Root" type="Control" parent="." unique_id=942850969]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopLeft" type="VBoxContainer" parent="Root" unique_id=709813224]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_constants/separation = 8
+
+[node name="LevelRow" type="HBoxContainer" parent="Root/TopLeft" unique_id=2043509334]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LevelBadge" type="Label" parent="Root/TopLeft/LevelRow" unique_id=1703975322]
+layout_mode = 2
+text = "Lv 1"
+
+[node name="XPBar" type="ProgressBar" parent="Root/TopLeft/LevelRow" unique_id=312107661]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+size_flags_vertical = 4
+value = 40.0
+show_percentage = false
+
+[node name="Resources" type="HBoxContainer" parent="Root/TopLeft" unique_id=635618184]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Coins" type="HBoxContainer" parent="Root/TopLeft/Resources" unique_id=866503387]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Icon" type="Label" parent="Root/TopLeft/Resources/Coins" unique_id=837252848]
+layout_mode = 2
+text = "COIN"
+
+[node name="Count" type="Label" parent="Root/TopLeft/Resources/Coins" unique_id=1538424370]
+layout_mode = 2
+text = "1240"
+
+[node name="Material1" type="HBoxContainer" parent="Root/TopLeft/Resources" unique_id=1417090115]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Icon" type="Label" parent="Root/TopLeft/Resources/Material1" unique_id=52653669]
+layout_mode = 2
+text = "MAT"
+
+[node name="Count" type="Label" parent="Root/TopLeft/Resources/Material1" unique_id=1225983044]
+layout_mode = 2
+text = "12"
+
+[node name="Material2" type="HBoxContainer" parent="Root/TopLeft/Resources" unique_id=1938536124]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Icon" type="Label" parent="Root/TopLeft/Resources/Material2" unique_id=1373695157]
+layout_mode = 2
+text = "GEM"
+
+[node name="Count" type="Label" parent="Root/TopLeft/Resources/Material2" unique_id=1838614323]
+layout_mode = 2
+text = "3"
+
+[node name="TopRight" type="HBoxContainer" parent="Root" unique_id=1474350552]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+theme_override_constants/separation = 8
+
+[node name="TextureButton" type="TextureButton" parent="Root/TopRight" unique_id=531360077]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_yixhe")
+
+[node name="BottomRight" type="VBoxContainer" parent="Root" unique_id=816951473]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="TextureButton" type="TextureButton" parent="Root/BottomRight" unique_id=699927612]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_yixhe")
+
+[node name="BestFloor" type="Label" parent="Root/BottomRight" unique_id=1811349783]
+layout_mode = 2
+text = "best: Floor 7"
+horizontal_alignment = 2

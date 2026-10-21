@@ -1,1 +1,3 @@
-res://Entity/player.gd
+res://UI/Menu.tscn
+res://UI/HUD.tscn
+res://UI/Lobby.tscn
