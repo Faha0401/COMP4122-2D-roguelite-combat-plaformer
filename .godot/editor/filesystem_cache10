@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1792552471
+::res://::1792555989
 icon.svg::CompressedTexture2D::1790880795757653::1791341417::1791341678::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1791341233::0::1::::<><><>0<>0<><>::
 ::res://addons/::1791937870
@@ -55,7 +55,7 @@ devlog_capture.gd::GDScript::5087907644959963224::1791447909::0::1::::<>Node<><>
 devlog_editor_recorder.gd::GDScript::5308495565044205611::1791447909::0::1::::<>Node<><>0<>1<><>::
 ::res://addons/ziva_agent/zivacode/::1791447909
 ::res://addons/ziva_agent/zivacode/macos/::1791447909
-::res://Assets/::1792553607
+::res://Assets/::1792555734
 ::res://Assets/Animation/::1791531949
 ::res://Assets/Animation/Enemy/::1791531949
 Attack.png::CompressedTexture2D::9021715276272328567::1791531638::1791531639::1::::<><><>0<>0<>9cf0ac799237e4dd3bc693471fd55ac7<>res://.godot/imported/Attack.png-2ac25d8e38634daf2344b5c8ee0e7d97.ctex::
@@ -75,7 +75,10 @@ Jump.png::CompressedTexture2D::8414328858619400436::1791435304::1791472493::1:::
 Run.png::CompressedTexture2D::7334765824463367519::1791435304::1791472493::1::::<><><>0<>0<>ac9113d1b210a17bb7f36adeba6d978b<>res://.godot/imported/Run.png-4ad1fbbcf1a60be3e46d7703d645f761.ctex::
 ::res://Assets/game_title.png/::1792553434
 game_title.png::CompressedTexture2D::3862786737028075457::1792553433::1792553434::1::::<><><>0<>0<>07c1dcc0f0e3cb9324d47334b889aced<>res://.godot/imported/game_title.png-c4e218c134c5936143ea3dfd1fb7bd71.ctex::
-::res://Assets/UI/::1792553648
+::res://Assets/generated/::1792555890
+chrono_blade_title.png::CompressedTexture2D::7739768062927022951::1792555735::1792555735::1::::<><><>0<>0<>c5ee517800fa00d4e9d2442008df02ed<>res://.godot/imported/chrono_blade_title.png-d49b6e68d7da77d71b6ce36d760685d2.ctex::
+::res://Assets/UI/::1792555988
+chrono_blade_title.png::CompressedTexture2D::1429191318402642603::1792555867::1792555989::1::::<><><>0<>0<>d739374b86a2bd12f91b574c199d5739<>res://.godot/imported/chrono_blade_title.png-6b5bb0a34aa04d52fcd2fd4afbe54856.ctex::
 freefantasy.png::CompressedTexture2D::1699500163065558712::1792553648::1792553648::1::::<><><>0<>0<>6004012f3989d411805f6f524dab2c06<>res://.godot/imported/freefantasy.png-2f2bc71ce713ddff7a63c8a160ccde3d.ctex::
 FreeHorrorUi.png::CompressedTexture2D::2098154183241474494::1792553614::1792553614::1::::<><><>0<>0<>589ddc78ddba1ceef822e97d91dd4e66<>res://.godot/imported/FreeHorrorUi.png-26ca8ca128858d7c528c32af1729ee4e.ctex::
 ::res://Entity/::1791532032
@@ -105,6 +108,7 @@ Puzzle2.tscn::PackedScene::7431142474461952551::1792552371::0::1::::<><><>0<>0<>
 Shop1.tscn::PackedScene::4966577610909026975::1792552356::0::1::::<><><>0<>0<><>::
 Shop2.tscn::PackedScene::253514833671920784::1792552361::0::1::::<><><>0<>0<><>::
 ::res://SFX/::1791341454
-::res://UI/::1792553564
-Lobby.tscn::PackedScene::8258339827738124037::1792552319::0::1::::<><><>0<>0<><>::
-Menu.tscn::PackedScene::6601484377593937838::1792553564::0::1::::<><><>0<>0<><>::
+::res://UI/::1792555988
+HUD.tscn::PackedScene::6544648696563456914::1792555069::0::1::::<><><>0<>0<><>::
+Lobby.tscn::PackedScene::8258339827738124037::1792555069::0::1::::<><><>0<>0<><>::uid://c0ijn4qa8eu15::::res://UI/HUD.tscn
+Menu.tscn::PackedScene::6601484377593937838::1792555988::0::1::::<><><>0<>0<><>::uid://45mj7sldxl3s::::res://Assets/UI/FreeHorrorUi.png
