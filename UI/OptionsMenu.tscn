@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://hd52vyux7rjh"]
+
+[ext_resource type="Script" uid="uid://dr3gxdoyxue0j" path="res://UI/OptionsMenu.gd" id="1_7aenu"]
+
+[node name="OptionsMenu" type="CanvasLayer" unique_id=1018735116]
+script = ExtResource("1_7aenu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1234143783]
+offset_left = 326.0
+offset_top = 124.0
+offset_right = 826.0
+offset_bottom = 524.0
+
+[node name="MainPanel" type="PanelContainer" parent="." unique_id=933960936]
+custom_minimum_size = Vector2(500, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel" unique_id=763884855]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/MarginContainer" unique_id=2109951504]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=328730193]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=134875050]
+layout_mode = 2
+
+[node name="Audio" type="HSlider" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=710377339]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="Resolution" type="OptionButton" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1446046146]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 3
+popup/item_0/text = "1280 x 720"
+popup/item_0/id = 0
+popup/item_1/text = "1920 x 1080"
+popup/item_1/id = 1
+popup/item_2/text = "2560 x 1440"
+popup/item_2/id = 2
+
+[node name="ControlsButton" type="Button" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1989811843]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Controls"
+
+[node name="Spacer" type="Control" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1008688452]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1290986999]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"

@@ -472,6 +472,10 @@ autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2018363935]
 zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 864
+limit_bottom = 669
 position_smoothing_enabled = true
 
 [node name="DashArea" type="Area2D" parent="." unique_id=1738499997 groups=["Damage_area"]]

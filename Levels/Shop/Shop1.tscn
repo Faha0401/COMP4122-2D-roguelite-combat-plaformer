@@ -1,3 +1,118 @@
-[gd_scene format=3 uid="uid://cc032pu6fvxg6"]
+[gd_scene format=3 uid="uid://gn38uk43grei"]
 
-[node name="Shop1" type="Node2D" unique_id=1688775458]
+[ext_resource type="Script" uid="uid://djl1uewwji6qk" path="res://Game/room.gd" id="1_room"]
+[ext_resource type="PackedScene" uid="uid://cfj2v1mrneioe" path="res://Game/Portal.tscn" id="2_portal"]
+
+[sub_resource type="WorldBoundaryShape2D" id="ground"]
+
+[sub_resource type="RectangleShape2D" id="wall_l"]
+size = Vector2(8, 648)
+
+[sub_resource type="RectangleShape2D" id="wall_r"]
+size = Vector2(8, 648)
+
+[sub_resource type="RectangleShape2D" id="ceil"]
+size = Vector2(864, 8)
+
+[sub_resource type="RectangleShape2D" id="landing"]
+size = Vector2(260, 16)
+
+[sub_resource type="RectangleShape2D" id="blk0"]
+size = Vector2(320, 16)
+
+[node name="Shop1" type="Node2D" unique_id=285568379]
+script = ExtResource("1_room")
+room_type = "shop"
+
+[node name="Background" type="ColorRect" parent="." unique_id=367695423]
+z_index = -100
+offset_right = 864.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.08, 0.12, 0.09, 1)
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=828886029]
+
+[node name="Col" type="CollisionShape2D" parent="Ground" unique_id=1805128152]
+position = Vector2(432, 648)
+shape = SubResource("ground")
+
+[node name="FloorVis" type="ColorRect" parent="." unique_id=1857453889]
+z_index = -50
+offset_top = 640.0
+offset_right = 864.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.15, 0.35, 0.2, 1)
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=360446405]
+
+[node name="Col" type="CollisionShape2D" parent="LeftWall" unique_id=460582291]
+position = Vector2(4, 324)
+shape = SubResource("wall_l")
+
+[node name="LeftVis" type="ColorRect" parent="." unique_id=2059592512]
+z_index = -50
+offset_right = 8.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.3, 0.7, 0.4, 1)
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=101232900]
+
+[node name="Col" type="CollisionShape2D" parent="RightWall" unique_id=2007679311]
+position = Vector2(860, 324)
+shape = SubResource("wall_r")
+
+[node name="RightVis" type="ColorRect" parent="." unique_id=919131696]
+z_index = -50
+offset_left = 856.0
+offset_right = 864.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.3, 0.7, 0.4, 1)
+
+[node name="Ceiling" type="StaticBody2D" parent="." unique_id=1151259717]
+
+[node name="Col" type="CollisionShape2D" parent="Ceiling" unique_id=305186104]
+position = Vector2(432, 4)
+shape = SubResource("ceil")
+
+[node name="Landing" type="StaticBody2D" parent="." unique_id=1028174737]
+
+[node name="Col" type="CollisionShape2D" parent="Landing" unique_id=1336696338]
+position = Vector2(657, 488)
+shape = SubResource("landing")
+
+[node name="LandingVis" type="ColorRect" parent="." unique_id=614062654]
+z_index = -40
+offset_left = 527.0
+offset_top = 479.0
+offset_right = 787.0
+offset_bottom = 495.0
+mouse_filter = 2
+color = Color(0.45, 0.85, 0.55, 1)
+
+[node name="Blk0" type="StaticBody2D" parent="." unique_id=1566980947]
+
+[node name="Col" type="CollisionShape2D" parent="Blk0" unique_id=1400941775]
+position = Vector2(360, 508)
+shape = SubResource("blk0")
+
+[node name="Vis0" type="ColorRect" parent="." unique_id=1875129489]
+z_index = -40
+offset_left = 200.0
+offset_top = 500.0
+offset_right = 520.0
+offset_bottom = 516.0
+mouse_filter = 2
+color = Color(0.3, 0.7, 0.4, 1)
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=1793900712]
+position = Vector2(90, 600)
+
+[node name="PortalTop" parent="." unique_id=45886612 instance=ExtResource("2_portal")]
+position = Vector2(807, 502)
+
+[node name="PortalBottom" parent="." unique_id=1222838190 instance=ExtResource("2_portal")]
+position = Vector2(808, 596)

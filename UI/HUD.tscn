@@ -114,8 +114,10 @@ theme_override_constants/separation = 4
 alignment = 2
 
 [node name="TextureButton" type="TextureButton" parent="Root/BottomRight" unique_id=699927612]
+custom_minimum_size = Vector2(156, 45)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_yixhe")
+stretch_mode = 0
 
 [node name="BestFloor" type="Label" parent="Root/BottomRight" unique_id=1811349783]
 layout_mode = 2

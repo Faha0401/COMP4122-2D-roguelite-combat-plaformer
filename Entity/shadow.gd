@@ -24,7 +24,6 @@ func _copy(dict: Dictionary):
 		if animated_sprite_2d.animation != dict["animation"]:
 			animated_sprite_2d.animation = dict["animation"] # Prevent the animation replaying, prob dont need this if frame is used instead of just animation
 		animated_sprite_2d.flip_h = dict["flip_h"]
-	print("cur = ", position, " shadow = ", dict["position"])
 	
 func _blast():
 	 # Prob also group the blast collision into damage_area act exactly like normal attacks

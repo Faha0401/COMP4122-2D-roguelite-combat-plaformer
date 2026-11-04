@@ -7,7 +7,7 @@ var combo_window_open: bool = false
 var combo_queued: bool = false 
 var direction: int = 1
 var Speed: float = 300
-var Jump_velocity: float = -400
+var Jump_velocity: float = -566  # was -400; sqrt(2)x velocity => ~2x jump height (h = v^2 / 2g)
 var Gravity: float = 1000
 var Acceleration: float = 1000
 var Friction: float = 2
@@ -200,15 +200,12 @@ func _snapshot():
 		# Snapshot ; [{init},{null},{null},(append here)] so the shadow copies the init status on spawn, then just ignore every snapshot until the delay had passed
 		
 		if (recorder.snapshots[0] != null): # It's possible for the dictionary to not spawn or not init before this function calls, scheduling problem
-			print("recording!", recorder.snapshots)
 			Shadow._copy(recorder.snapshots[0])
 
 func Shadow_cooldown():
 	# Just a simple delta timer
 	if Shadow == null:
-		print("Shadow cooldown = ", rewind_cooldown)
 		if rewind_cooldown > 0:
 			rewind_cooldown -= _delta
 			return
-		print("spawned")
 		_spawn_shadow()

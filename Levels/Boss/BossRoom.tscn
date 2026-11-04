@@ -1,3 +1,96 @@
-[gd_scene format=3 uid="uid://bxxn4xek3fgbo"]
+[gd_scene load_steps=7 format=3]
 
-[node name="BossRoom" type="Node2D" unique_id=749371117]
+[ext_resource type="Script" path="res://Game/room.gd" id="1_room"]
+[ext_resource type="PackedScene" path="res://Game/Portal.tscn" id="2_portal"]
+
+[sub_resource type="WorldBoundaryShape2D" id="ground"]
+
+[sub_resource type="RectangleShape2D" id="wall_l"]
+size = Vector2(8, 648)
+
+[sub_resource type="RectangleShape2D" id="wall_r"]
+size = Vector2(8, 648)
+
+[sub_resource type="RectangleShape2D" id="ceil"]
+size = Vector2(864, 8)
+
+[node name="BossRoom" type="Node2D"]
+script = ExtResource("1_room")
+room_type = "boss"
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 864.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.12, 0.07, 0.15, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="Ground"]
+position = Vector2(432.0, 648.0)
+shape = SubResource("ground")
+
+[node name="FloorVis" type="ColorRect" parent="."]
+z_index = -50
+offset_left = 0.0
+offset_top = 640.0
+offset_right = 864.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.2, 0.2, 0.24, 1)
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(4.0, 324.0)
+shape = SubResource("wall_l")
+
+[node name="LeftVis" type="ColorRect" parent="."]
+z_index = -50
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 8.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.3, 0.3, 0.35, 1)
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(860.0, 324.0)
+shape = SubResource("wall_r")
+
+[node name="RightVis" type="ColorRect" parent="."]
+z_index = -50
+offset_left = 856.0
+offset_top = 0.0
+offset_right = 864.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.3, 0.3, 0.35, 1)
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(432.0, 4.0)
+shape = SubResource("ceil")
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(90, 600)
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 700.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 28
+text = "ROOM"
+
+[node name="PortalTop" parent="." instance=ExtResource("2_portal")]
+position = Vector2(804, 540)
+
+[node name="PortalBottom" parent="." instance=ExtResource("2_portal")]
+position = Vector2(804, 640)

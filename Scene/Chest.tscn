@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cdx6wxlfbttnm"]
+
+[ext_resource type="Script" uid="uid://4qr332asriux" path="res://Scene/chest.gd" id="1_chest"]
+[ext_resource type="Texture2D" uid="uid://d081ye887ns0s" path="res://Assets/Scene/Chest/Chest.png" id="2_477gw"]
+[ext_resource type="Texture2D" uid="uid://cc6c2j3jjswcj" path="res://Assets/Scene/Chest/Open/Open(DustFX)1.png" id="3_yor20"]
+[ext_resource type="Texture2D" uid="uid://c0g8k7un3vmcn" path="res://Assets/Scene/Chest/Open/Open(DustFX)2.png" id="4_afaor"]
+[ext_resource type="Texture2D" uid="uid://4cjgal6vtncm" path="res://Assets/Scene/Chest/Open/Open(DustFX)3.png" id="5_7uuun"]
+[ext_resource type="Texture2D" uid="uid://c40g3q1byi8pd" path="res://Assets/Scene/Chest/Open/Open(DustFX)4.png" id="6_678xd"]
+[ext_resource type="Texture2D" uid="uid://c3bbpdwo5qgar" path="res://Assets/Scene/Chest/Open/Open(DustFX)5.png" id="7_dnylm"]
+[ext_resource type="Texture2D" uid="uid://0if7roy0ji6o" path="res://Assets/Scene/Chest/Open/Open(DustFX)6.png" id="8_7oemx"]
+[ext_resource type="Texture2D" uid="uid://bnqth2m0pn608" path="res://Assets/Scene/Chest/Open/Open(DustFX)7.png" id="9_83ch8"]
+[ext_resource type="Texture2D" uid="uid://2q7b1xs8gdcn" path="res://Assets/Scene/Chest/Open/Open(DustFX)8.png" id="10_0e80y"]
+[ext_resource type="Texture2D" uid="uid://n4688mu52knn" path="res://Assets/Scene/Chest/Open/Open(DustFX)9.png" id="11_abj0m"]
+[ext_resource type="Texture2D" uid="uid://c005e8qxhg8qq" path="res://Assets/Scene/Chest/Open/Open(DustFX)10.png" id="12_7p3n7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tl4y5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_477gw")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yor20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_afaor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7uuun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_678xd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dnylm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7oemx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_83ch8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0e80y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_abj0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7p3n7")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_477gw"]
+size = Vector2(64, 48)
+
+[node name="Chest" type="Node2D" unique_id=1279247956]
+script = ExtResource("1_chest")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=823329929]
+sprite_frames = SubResource("SpriteFrames_tl4y5")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="DetectArea" type="Area2D" parent="." unique_id=682298539]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=414071925]
+shape = SubResource("RectangleShape2D_477gw")

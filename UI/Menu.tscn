@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://c1b2qouc71ng5"]
 
+[ext_resource type="Script" uid="uid://c1s62ae0wv0e0" path="res://UI/Menu.gd" id="1_f2m7h"]
 [ext_resource type="Texture2D" uid="uid://45mj7sldxl3s" path="res://Assets/UI/FreeHorrorUi.png" id="1_gda05"]
+[ext_resource type="Texture2D" uid="uid://umktpqakx004" path="res://Assets/UI/chrono_blade_title.png" id="1_h7hgu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gda05"]
+atlas = ExtResource("1_h7hgu")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axeig"]
 atlas = ExtResource("1_gda05")
@@ -48,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f2m7h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=148670503]
 
@@ -67,9 +73,10 @@ custom_minimum_size = Vector2(384, 192)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture = SubResource("AtlasTexture_gda05")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/CenterRow/MainContainer" unique_id=2024194928]
-custom_minimum_size = Vector2(104, 30)
+custom_minimum_size = Vector2(156, 45)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("AtlasTexture_axeig")
@@ -78,7 +85,7 @@ texture_hover = SubResource("AtlasTexture_ildal")
 stretch_mode = 0
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/CenterRow/MainContainer" unique_id=101332754]
-custom_minimum_size = Vector2(104, 30)
+custom_minimum_size = Vector2(156, 45)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("AtlasTexture_f2m7h")

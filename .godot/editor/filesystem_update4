@@ -1,3 +1,7 @@
-res://UI/Menu.tscn
-res://UI/HUD.tscn
-res://UI/Lobby.tscn
+res://Game/scene_manager.gd
+res://Game/run_generator.gd
+res://tools/validate_grammar.gd
+res://Game/room.gd
+res://Entity/Player.tscn
+res://Entity/player.gd
+res://tools/test_run.gd
