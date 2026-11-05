@@ -25,10 +25,15 @@ const NO_EXIT := -1
 var _queued_exit := NO_EXIT
 var _draining := false
 
-@onready var _fade_rect: ColorRect = $CanvasLayer/FadeRect
+@onready var _fade_rect: ColorRect = $Fade/FadeRect
+@onready var _hud: CanvasLayer = $HUD
 
 
 func _ready() -> void:
+	# A run owns exactly one reset point, here, so RETRY and PLAY cannot drift
+	# apart in what they reset.
+	RunState.start_run()
+
 	var generator := RunGenerator.new()
 	graph = generator.build()
 	_queued_exit = generator.start_id
@@ -73,6 +78,10 @@ func _swap_room(node_id: int) -> void:
 	room.add_child(player)
 	player.global_position = room.get_spawn_position()
 	player.velocity = Vector2.ZERO
+
+	RunState.enter_room()
+	if _hud != null and _hud.has_method("show_room"):
+		_hud.show_room(room_data["name"], room_data["type"], RunState.rooms_entered - 1)
 
 
 func _clear_current_room() -> void:

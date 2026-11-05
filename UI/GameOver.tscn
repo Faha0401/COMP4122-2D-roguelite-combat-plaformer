@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://UI/GameOver.gd" id="1_over"]
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 3
+layer = 70
+script = ExtResource("1_over")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.055, 0.006, 0.012, 0.93)
+
+[node name="Center" type="CenterContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Card" type="PanelContainer" parent="Root/Center"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(660, 0)
+layout_mode = 2
+theme_type_variation = &"CardPanel"
+
+[node name="Body" type="VBoxContainer" parent="Root/Center/Card"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Root/Center/Card/Body"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_colors/font_color = Color(0.78, 0.16, 0.19, 1)
+theme_override_font_sizes/font_size = 88
+text = "YOU DIED"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Root/Center/Card/Body"]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+text = "THE BLADE OUTLIVED YOU"
+horizontal_alignment = 1
+
+[node name="Rule" type="ColorRect" parent="Root/Center/Card/Body"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.29, 0.11, 0.12, 1)
+
+[node name="Stats" type="GridContainer" parent="Root/Center/Card/Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 48
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="RoomsLabel" type="Label" parent="Root/Center/Card/Body/Stats"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "ROOMS"
+
+[node name="CoinsLabel" type="Label" parent="Root/Center/Card/Body/Stats"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "COINS"
+
+[node name="LevelLabel" type="Label" parent="Root/Center/Card/Body/Stats"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "LEVEL"
+
+[node name="RoomsValue" type="Label" parent="Root/Center/Card/Body/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+text = "00"
+
+[node name="CoinsValue" type="Label" parent="Root/Center/Card/Body/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+text = "0"
+
+[node name="LevelValue" type="Label" parent="Root/Center/Card/Body/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+text = "1"
+
+[node name="Gap" type="Control" parent="Root/Center/Card/Body"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Root/Center/Card/Body"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="Root/Center/Card/Body/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 58)
+layout_mode = 2
+text = "RETRY"
+
+[node name="TitleButton" type="Button" parent="Root/Center/Card/Body/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 58)
+layout_mode = 2
+text = "TITLE SCREEN"

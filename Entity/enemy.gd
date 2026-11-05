@@ -92,6 +92,10 @@ func _on_detection_zone_body_exited(body: Node2D) -> void:
 func _on_attack_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		current_state = State.ATTACK
+		# Feeds the HUD. RunState.damage() ignores the call outside a run and
+		# during its own invulnerability window, so re-entering the zone while
+		# the state machine is already attacking cannot drain the bar.
+		RunState.damage(1)
 
 func _on_attack_zone_body_exited(body: Node2D) -> void:
 	if body == player:

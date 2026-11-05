@@ -1,13 +1,17 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://Game/scene_manager.gd" id="1_run"]
+[ext_resource type="PackedScene" path="res://UI/HUD.tscn" id="2_hud"]
 
 [node name="Run" type="Node2D"]
 script = ExtResource("1_run")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" parent="." instance=ExtResource("2_hud")]
 
-[node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Fade" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="FadeRect" type="ColorRect" parent="Fade"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
