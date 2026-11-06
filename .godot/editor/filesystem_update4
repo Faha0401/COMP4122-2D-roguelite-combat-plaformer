@@ -5,3 +5,6 @@ res://Game/room.gd
 res://Entity/Player.tscn
 res://Entity/player.gd
 res://tools/test_run.gd
+res://Entity/Environtment/Platform.tscn
+res://Levels/Boss/BossRoom.tscn
+res://Levels/Combat/Combat1.tscn

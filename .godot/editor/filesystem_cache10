@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1793768117
+::res://::1793772073
 icon.svg::CompressedTexture2D::1790880795757653::1791341417::1791341678::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1791341233::0::1::::<><><>0<>0<><>::
 ::res://addons/::1793768112
@@ -43,7 +43,7 @@ paths.gd::GDScript::1550710383380248569::1791937870::0::1::::MCPPaths<>RefCounte
 path_guard.gd::GDScript::3648910741404291727::1791937870::0::1::::PathGuard<>RefCounted<><>0<>1<><>::
 variant_codec.gd::GDScript::5454464194856492287::1791937870::0::1::::VariantCodec<>RefCounted<><>0<>1<><>::
 wire_text.gd::GDScript::4905198755702526378::1791937870::0::1::::WireText<>RefCounted<><>0<>1<><>::
-::res://addons/ziva_agent/::1793765579
+::res://addons/ziva_agent/::1793768118
 icon.svg::CompressedTexture2D::5685685212542098619::1793765579::1793768118::1::::<><><>0<>0<>4a753d31ff02b21bff92129d42511554<>res://.godot/imported/icon.svg-092e97b879f73eb599fff18ea13f23cb.ctex::
 LICENSE.md::TextFile::-1::1793765579::0::1::::<><><>0<>0<><>::
 manifest.json::JSON::-1::1793765579::0::1::::<><><>0<>0<><>::
@@ -74,7 +74,7 @@ game_title.png::CompressedTexture2D::3862786737028075457::1792553433::1792553434
 ::res://Assets/generated/::1792555890
 chrono_blade_title.png::CompressedTexture2D::7739768062927022951::1792555735::1792555735::1::::<><><>0<>0<>c5ee517800fa00d4e9d2442008df02ed<>res://.godot/imported/chrono_blade_title.png-d49b6e68d7da77d71b6ce36d760685d2.ctex::
 ::res://Assets/Scene/::1793767980
-::res://Assets/Scene/Backgrounds/::1793768005
+::res://Assets/Scene/Backgrounds/::1793772531
 Alchemy Decor.png::CompressedTexture2D::8488358021429288411::1793768003::1793768004::1::::<><><>0<>0<>1b2007045145731a80f9900aa7a593ae<>res://.godot/imported/Alchemy Decor.png-4da08cb9e1613b2a50786f07407636a4.ctex::
 Angel Statue.png::CompressedTexture2D::1096638008845898425::1793768003::1793768004::1::::<><><>0<>0<>c0c3564293375e076bf0139a6117cd5e<>res://.godot/imported/Angel Statue.png-108d1bcc69069f16ac4e30a60491f97d.ctex::
 BG Dirt1.png::CompressedTexture2D::6468077530626015002::1793768003::1793768004::1::::<><><>0<>0<>7e252afc86b610a8e9ac8d2e355055d2<>res://.godot/imported/BG Dirt1.png-0604b1686a84d04e4ff78d1cb2a5d178.ctex::
@@ -168,6 +168,12 @@ GandalfHardcore Background layers_layer 2.png::CompressedTexture2D::662161427427
 GandalfHardcore Background layers_layer 3.png::CompressedTexture2D::4710773558804149846::1793768003::1793768004::1::::<><><>0<>0<>b577bf31baf363ce4d5fcd9059a47373<>res://.godot/imported/GandalfHardcore Background layers_layer 3.png-cbdf6ce70a297f752c540bb4e598326f.ctex::
 GandalfHardcore Background layers_layer 4.png::CompressedTexture2D::2530360177954130946::1793768003::1793768004::1::::<><><>0<>0<>1267e26fdbbe79b1a511238e83d51744<>res://.godot/imported/GandalfHardcore Background layers_layer 4.png-437d1a1d4fe2419e858d58b37bdc999f.ctex::
 GandalfHardcore Background layers_layer 5.png::CompressedTexture2D::3222821574206208998::1793768003::1793768004::1::::<><><>0<>0<>23fba0eb8ec11cdf139125d203e3642d<>res://.godot/imported/GandalfHardcore Background layers_layer 5.png-da4281db3fe13466ad1a117b33221849.ctex::
+::res://Assets/Scene/Backgrounds/Startfield/::1793772549
+background_0.png::CompressedTexture2D::6729825040620536714::1793772549::1793772550::1::::<><><>0<>0<>022493ecd0354153a356aad74c845da8<>res://.godot/imported/background_0.png-cf30f318536e042cad11fff283b94d4d.ctex::
+background_1.png::CompressedTexture2D::1323072574715126836::1793772549::1793772550::1::::<><><>0<>0<>b261437c22f6474841a5588fd1c0b719<>res://.godot/imported/background_1.png-2589cdd03d730206875a42c4fcfaa296.ctex::
+background_2.png::CompressedTexture2D::1718542460360063506::1793772549::1793772550::1::::<><><>0<>0<>8e04160c97c83c3cbb6d5f2ca315edd7<>res://.godot/imported/background_2.png-520315ea2e1f42407e57ceaee7ff3272.ctex::
+example.png::CompressedTexture2D::8613771800959055571::1793772549::1793772550::1::::<><><>0<>0<>31867340cc6afd2b9e497c1751e8dc2f<>res://.godot/imported/example.png-ef0542439f0c32b5e9d7b03e07585b16.ctex::
+tileset.png::CompressedTexture2D::5218971151417113435::1793772549::1793772550::1::::<><><>0<>0<>83a412acddf1e0fc5041cca506354b8e<>res://.godot/imported/tileset.png-4801d3670b4cca2c83616fb0d2426982.ctex::
 ::res://Assets/Scene/Backgrounds/Winter BG/::1793768004
 Background Castle  Winter.png::CompressedTexture2D::6798258439603220507::1793768003::1793768004::1::::<><><>0<>0<>dbe0d65ff6e750529379f8a88c1cfdde<>res://.godot/imported/Background Castle  Winter.png-4c4781f58684dad3945bdf03c25ee53d.ctex::
 GandalfHardcore Background layers_layer 1.png::CompressedTexture2D::3528287626653870831::1793768003::1793768004::1::::<><><>0<>0<>9d5b4a4600c3eea69c79538975342a33<>res://.godot/imported/GandalfHardcore Background layers_layer 1.png-6b2a99ef18cfefc4597315373a78e8cb.ctex::
@@ -257,22 +263,27 @@ OpenChest9.png::CompressedTexture2D::8442682790674967423::1738102195::1793765052
 chrono_blade_title.png::CompressedTexture2D::1429191318402642603::1792555867::1792555989::1::::<><><>0<>0<>d739374b86a2bd12f91b574c199d5739<>res://.godot/imported/chrono_blade_title.png-6b5bb0a34aa04d52fcd2fd4afbe54856.ctex::
 freefantasy.png::CompressedTexture2D::1699500163065558712::1792553648::1792553648::1::::<><><>0<>0<>6004012f3989d411805f6f524dab2c06<>res://.godot/imported/freefantasy.png-2f2bc71ce713ddff7a63c8a160ccde3d.ctex::
 FreeHorrorUi.png::CompressedTexture2D::2098154183241474494::1792553614::1792553614::1::::<><><>0<>0<>589ddc78ddba1ceef822e97d91dd4e66<>res://.godot/imported/FreeHorrorUi.png-26ca8ca128858d7c528c32af1729ee4e.ctex::
-::res://Entity/::1793764870
+::res://docs/::1793772183
+DEVELOPMENT_REQUIREMENTS.md::TextFile::-1::1793772098::0::1::::<><><>0<>0<><>::
+::res://Entity/::1793771204
 enemy.gd::GDScript::1177418649117835734::1791531573::0::1::::<>CharacterBody2D<><>0<>0<><>::
 enemy.tscn::PackedScene::2125517787372566326::1791532032::0::1::::<><><>0<>0<><>::uid://q1l6btt0ys2i::::res://Entity/enemy.gd<>uid://d1sglknatfh3l::::res://Assets/Animation/Enemy/Attack.png<>uid://f2edhut61s1c::::res://Assets/Animation/Enemy/Death.png<>uid://pc3g5xa6qh5a::::res://Assets/Animation/Enemy/Idle.png<>uid://bepmpke5ibtw4::::res://Assets/Animation/Enemy/Shield.png<>uid://cbd473j0v43yv::::res://Assets/Animation/Enemy/Take Hit.png<>uid://bkp2k30ks732o::::res://Assets/Animation/Enemy/Walk.png
-player.gd::GDScript::4383987603324072431::1793762492::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Player.tscn::PackedScene::8050125643488991171::1793764870::0::1::::<><><>0<>0<><>::uid://b3pvvuosrglyt::::res://Entity/player.gd<>uid://q53axoyg33rh::::res://Assets/Animation/Player/Attack3.png<>uid://cqyxhjab8uods::::res://Assets/Animation/Player/Death.png<>uid://yogx2q5y40el::::res://Assets/Animation/Player/Fall.png<>uid://d0kfu3c7hk7uq::::res://Assets/Animation/Player/Idle.png<>uid://dr471cukn6wau::::res://Assets/Animation/Player/Jump.png<>uid://2p2nc0ewu355::::res://Assets/Animation/Player/Attack1.png<>uid://dcrary4jr6l3t::::res://Assets/Animation/Player/Run.png<>uid://dio3yl644gjeq::::res://Assets/Animation/Player/Attack2.png<>uid://p2m7tnbu4ce1::::res://Entity/shadow_recorder.gd
+player.gd::GDScript::4383987603324072431::1793769270::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Player.tscn::PackedScene::8050125643488991171::1793769200::0::1::::<><><>0<>0<><>::uid://b3pvvuosrglyt::::res://Entity/player.gd<>uid://q53axoyg33rh::::res://Assets/Animation/Player/Attack3.png<>uid://cqyxhjab8uods::::res://Assets/Animation/Player/Death.png<>uid://yogx2q5y40el::::res://Assets/Animation/Player/Fall.png<>uid://d0kfu3c7hk7uq::::res://Assets/Animation/Player/Idle.png<>uid://dr471cukn6wau::::res://Assets/Animation/Player/Jump.png<>uid://2p2nc0ewu355::::res://Assets/Animation/Player/Attack1.png<>uid://dcrary4jr6l3t::::res://Assets/Animation/Player/Run.png<>uid://dio3yl644gjeq::::res://Assets/Animation/Player/Attack2.png<>uid://p2m7tnbu4ce1::::res://Entity/shadow_recorder.gd
 shadow.gd::GDScript::8074544551389252523::1793764940::0::1::::<>Node2D<><>0<>0<><>::
 Shadow.tscn::PackedScene::453541782627602744::1791520045::0::1::::<><><>0<>0<><>::uid://dnbmtl3ftdpah::::res://Entity/shadow.gd<>uid://q53axoyg33rh::::res://Assets/Animation/Player/Attack3.png<>uid://yogx2q5y40el::::res://Assets/Animation/Player/Fall.png<>uid://dr471cukn6wau::::res://Assets/Animation/Player/Jump.png<>uid://d0kfu3c7hk7uq::::res://Assets/Animation/Player/Idle.png<>uid://dcrary4jr6l3t::::res://Assets/Animation/Player/Run.png<>uid://2p2nc0ewu355::::res://Assets/Animation/Player/Attack1.png<>uid://dio3yl644gjeq::::res://Assets/Animation/Player/Attack2.png
 shadow_recorder.gd::GDScript::1109357621347668530::1791519722::0::1::::<>Node<><>0<>0<><>::
+::res://Entity/Environtment/::1793771240
+Platform.tscn::PackedScene::4416254455239021148::1793771240::0::1::::<><><>0<>0<><>::
 ::res://Entity/shadow.gd</::1793762505
-::res://Game/::1793767156
+::res://Game/::1793768713
 _probe.tscn::PackedScene::6711217490260234684::1793765286::0::1::::<><><>0<>0<><>::
 portal.gd::GDScript::1597756439102912651::1793767156::0::1::::<>Node2D<><>0<>0<><>::
 Portal.tscn::PackedScene::5144043230774297616::1793763414::0::1::::<><><>0<>0<><>::
-room.gd::GDScript::7815284401897333046::1793767156::0::1::::<>Node2D<><>0<>0<><>::
+room.gd::GDScript::7815284401897333046::1793768439::0::1::::<>Node2D<><>0<>0<><>::
 Run.tscn::PackedScene::-1::1793767323::0::1::::<><><>0<>0<><>::
-scene_manager.gd::GDScript::7846666686618921749::1793767300::0::1::::<>Node2D<><>0<>0<><>::
+run_generator.gd::GDScript::7247991732347673611::1793768548::0::1::::<>RefCounted<><>0<>0<><>::
+scene_manager.gd::GDScript::7846666686618921749::1793768713::0::1::::<>Node2D<><>0<>0<><>::
 ::res://Global/::1791518601
 cooldown.gd::GDScript::6099757851264257129::1791518601::0::1::::<>Node<><>0<>0<><>::
 ::res://Levels/::1792552369
@@ -295,9 +306,9 @@ Shop2.tscn::PackedScene::1041759799977105139::1793767710::0::1::::<><><>0<>0<><>
 chest.gd::GDScript::2069590213062517959::1793765960::0::1::::Chest<>Node2D<><>0<>0<><>::
 Chest.tscn::PackedScene::5032811326144526746::1793765734::0::1::::<><><>0<>0<><>::uid://4qr332asriux::::res://Scene/chest.gd<>uid://d081ye887ns0s::::res://Assets/Scene/Chest/Chest.png<>uid://cc6c2j3jjswcj::::res://Assets/Scene/Chest/Open/Open(DustFX)1.png<>uid://c0g8k7un3vmcn::::res://Assets/Scene/Chest/Open/Open(DustFX)2.png<>uid://4cjgal6vtncm::::res://Assets/Scene/Chest/Open/Open(DustFX)3.png<>uid://c40g3q1byi8pd::::res://Assets/Scene/Chest/Open/Open(DustFX)4.png<>uid://c3bbpdwo5qgar::::res://Assets/Scene/Chest/Open/Open(DustFX)5.png<>uid://0if7roy0ji6o::::res://Assets/Scene/Chest/Open/Open(DustFX)6.png<>uid://bnqth2m0pn608::::res://Assets/Scene/Chest/Open/Open(DustFX)7.png<>uid://2q7b1xs8gdcn::::res://Assets/Scene/Chest/Open/Open(DustFX)8.png<>uid://n4688mu52knn::::res://Assets/Scene/Chest/Open/Open(DustFX)9.png<>uid://c005e8qxhg8qq::::res://Assets/Scene/Chest/Open/Open(DustFX)10.png
 ::res://SFX/::1791341454
-::res://tools/::1793766329
-test_run.gd::GDScript::7626030492294093749::1793766329::0::1::::<>SceneTree<><>0<>0<><>::
-validate_grammar.gd::GDScript::5204048147698669370::1793765203::0::1::::<>SceneTree<><>0<>0<><>::
+::res://tools/::1793769233
+test_run.gd::GDScript::7626030492294093749::1793768604::0::1::::<>SceneTree<><>0<>0<><>::
+validate_grammar.gd::GDScript::5204048147698669370::1793768549::0::1::::<>SceneTree<><>0<>0<><>::
 ::res://UI/::1793763763
 HUD.tscn::PackedScene::6544648696563456914::1792556893::0::1::::<><><>0<>0<><>::
 Lobby.gd::GDScript::5637840353873434624::1793762487::0::1::::<>Control<><>0<>0<><>::

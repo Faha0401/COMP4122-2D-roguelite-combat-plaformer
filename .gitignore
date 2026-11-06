@@ -7,3 +7,4 @@
 .godot/editor/editor_layout.cfg
 .godot/editor/filesystem_cache10
 /addons/godot_mcp
+docs/DEVELOPMENT_REQUIREMENTS.md

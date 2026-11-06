@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b36jch5rb300w"]
+
+[ext_resource type="Script" uid="uid://cj8dedqfltr7r" path="res://Entity/Environtment/platform.gd" id="1_6ahod"]
+[ext_resource type="Texture2D" uid="uid://cgmdxsmvc3nah" path="res://Assets/Scene/Backgrounds/Startfield/tileset.png" id="2_jox1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwpho"]
+atlas = ExtResource("2_jox1j")
+region = Rect2(80, 64, 80, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl6yv"]
+size = Vector2(80, 6)
+
+[node name="Platform" type="StaticBody2D" unique_id=685233254]
+scale = Vector2(2, 2)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_6ahod")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=265327134]
+texture = SubResource("AtlasTexture_iwpho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=428885750]
+visibility_layer = 16
+shape = SubResource("RectangleShape2D_jl6yv")
+one_way_collision = true

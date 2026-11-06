@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djl1uewwji6qk" path="res://Game/room.gd" id="1_room"]
 [ext_resource type="PackedScene" uid="uid://cfj2v1mrneioe" path="res://Game/Portal.tscn" id="2_portal"]
+[ext_resource type="PackedScene" uid="uid://b36jch5rb300w" path="res://Entity/Environtment/Platform.tscn" id="3_aujbc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="ground"]
 
@@ -16,9 +17,6 @@ size = Vector2(864, 8)
 
 [sub_resource type="RectangleShape2D" id="landing"]
 size = Vector2(260, 16)
-
-[sub_resource type="RectangleShape2D" id="blk0"]
-size = Vector2(140, 16)
 
 [sub_resource type="RectangleShape2D" id="blk1"]
 size = Vector2(140, 16)
@@ -98,21 +96,6 @@ offset_bottom = 570.0
 mouse_filter = 2
 color = Color(0.77, 0.43, 0.45, 1)
 
-[node name="Blk0" type="StaticBody2D" parent="." unique_id=134725022]
-
-[node name="Col" type="CollisionShape2D" parent="Blk0" unique_id=155896255]
-position = Vector2(220, 478)
-shape = SubResource("blk0")
-
-[node name="Vis0" type="ColorRect" parent="." unique_id=1221465184]
-z_index = -40
-offset_left = 150.0
-offset_top = 470.0
-offset_right = 290.0
-offset_bottom = 486.0
-mouse_filter = 2
-color = Color(0.62, 0.28, 0.3, 1)
-
 [node name="Blk1" type="StaticBody2D" parent="." unique_id=450403185]
 
 [node name="Col" type="CollisionShape2D" parent="Blk1" unique_id=726630491]
@@ -151,3 +134,6 @@ position = Vector2(804, 512)
 
 [node name="PortalBottom" parent="." unique_id=458875169 instance=ExtResource("2_portal")]
 position = Vector2(804, 606)
+
+[node name="Platform" parent="." unique_id=685233254 instance=ExtResource("3_aujbc")]
+position = Vector2(175, 528)

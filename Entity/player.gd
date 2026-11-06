@@ -13,10 +13,13 @@ var Acceleration: float = 1000
 var Friction: float = 2
 var Lurch_timer: float = 0
 var Lurch_speed: float = 0
-const LURCH_DURATION: float = 0.08
+
 var _delta: float = 0
 var face = 1
 var rewind_cooldown = 0
+
+const LURCH_DURATION: float = 0.08
+const PLATFORM_LAYER: int = 5
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -33,7 +36,7 @@ var record_timer: float = 0.0
 #Player func######################################################
 func _ready() -> void:
 	_spawn_shadow()
-	
+	set_collision_mask_value(PLATFORM_LAYER, true)
 	
 func _physics_process(delta: float) -> void:
 	_delta = delta
@@ -57,6 +60,13 @@ func _movement(delta):
 	else:
 		if Input.is_action_just_pressed("Jump"):
 			velocity.y = Jump_velocity
+		#One way collision drop
+		elif Input.is_action_just_pressed("Down"):
+			print("drop")
+			set_collision_mask_value(PLATFORM_LAYER, false)
+			velocity.y = Speed/PLATFORM_LAYER
+			await get_tree().create_timer(0.2).timeout
+			set_collision_mask_value(PLATFORM_LAYER, true)
 		else: 
 			velocity.y  = 0
 	
