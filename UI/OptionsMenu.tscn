@@ -1,84 +1,273 @@
-[gd_scene format=3 uid="uid://hd52vyux7rjh"]
+[gd_scene load_steps=3 format=3 uid="uid://hd52vyux7rjh"]
 
-[ext_resource type="Script" uid="uid://dr3gxdoyxue0j" path="res://UI/OptionsMenu.gd" id="1_7aenu"]
+[ext_resource type="Script" path="res://UI/OptionsMenu.gd" id="1_options"]
+[ext_resource type="Texture2D" path="res://Assets/UI/menu_backdrop.png" id="2_backdrop"]
 
-[node name="OptionsMenu" type="CanvasLayer" unique_id=1018735116]
-script = ExtResource("1_7aenu")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1234143783]
-offset_left = 326.0
-offset_top = 124.0
-offset_right = 826.0
-offset_bottom = 524.0
-
-[node name="MainPanel" type="PanelContainer" parent="." unique_id=933960936]
-custom_minimum_size = Vector2(500, 400)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -200.0
-offset_right = 250.0
-offset_bottom = 200.0
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_options")
 
-[node name="MarginContainer" type="MarginContainer" parent="MainPanel" unique_id=763884855]
+[node name="Backdrop" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_backdrop")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.012, 0.014, 0.9)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Card" type="PanelContainer" parent="Center"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(960, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
+theme_type_variation = &"CardPanel"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/MarginContainer" unique_id=2109951504]
+[node name="Body" type="VBoxContainer" parent="Center/Card"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="Center/Card/Body"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TitleLabel" type="Label" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=328730193]
+[node name="Title" type="Label" parent="Center/Card/Body/Header"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Options"
-horizontal_alignment = 1
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 38
+text = "OPTIONS"
 
-[node name="HSeparator" type="HSeparator" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=134875050]
-layout_mode = 2
-
-[node name="Audio" type="HSlider" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=710377339]
-custom_minimum_size = Vector2(0, 30)
+[node name="HeaderSpacer" type="Control" parent="Center/Card/Body/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Hint" type="Label" parent="Center/Card/Body/Header"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"MutedLabel"
+text = "ESC  BACK"
+
+[node name="Rule1" type="ColorRect" parent="Center/Card/Body"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.29, 0.11, 0.12, 1)
+
+[node name="Columns" type="HBoxContainer" parent="Center/Card/Body"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="Left" type="VBoxContainer" parent="Center/Card/Body/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="DisplaySection" type="VBoxContainer" parent="Center/Card/Body/Columns/Left"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Center/Card/Body/Columns/Left/DisplaySection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83, 0.24, 0.25, 1)
+text = "DISPLAY"
+
+[node name="Grid" type="GridContainer" parent="Center/Card/Body/Columns/Left/DisplaySection"]
+layout_mode = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="FullscreenLabel" type="Label" parent="Center/Card/Body/Columns/Left/DisplaySection/Grid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "FULLSCREEN"
+
+[node name="FullscreenButton" type="Button" parent="Center/Card/Body/Columns/Left/DisplaySection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OFF"
+
+[node name="ResolutionLabel" type="Label" parent="Center/Card/Body/Columns/Left/DisplaySection/Grid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "RESOLUTION"
+
+[node name="ResolutionOption" type="OptionButton" parent="Center/Card/Body/Columns/Left/DisplaySection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VsyncLabel" type="Label" parent="Center/Card/Body/Columns/Left/DisplaySection/Grid"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "V-SYNC"
+
+[node name="VsyncButton" type="Button" parent="Center/Card/Body/Columns/Left/DisplaySection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ON"
+
+[node name="AudioSection" type="VBoxContainer" parent="Center/Card/Body/Columns/Left"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Center/Card/Body/Columns/Left/AudioSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83, 0.24, 0.25, 1)
+text = "AUDIO"
+
+[node name="Grid" type="GridContainer" parent="Center/Card/Body/Columns/Left/AudioSection"]
+layout_mode = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 4
+columns = 3
+
+[node name="MasterLabel" type="Label" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "MASTER"
+
+[node name="MasterSlider" type="HSlider" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 max_value = 1.0
 step = 0.01
 value = 0.8
 
-[node name="Resolution" type="OptionButton" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1446046146]
-custom_minimum_size = Vector2(0, 40)
+[node name="MasterValue" type="Label" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "80%"
+horizontal_alignment = 2
+
+[node name="MusicLabel" type="Label" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "MUSIC"
+
+[node name="MusicSlider" type="HSlider" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 34)
 layout_mode = 2
 size_flags_horizontal = 3
-selected = 0
-item_count = 3
-popup/item_0/text = "1280 x 720"
-popup/item_0/id = 0
-popup/item_1/text = "1920 x 1080"
-popup/item_1/id = 1
-popup/item_2/text = "2560 x 1440"
-popup/item_2/id = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.7
 
-[node name="ControlsButton" type="Button" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1989811843]
-custom_minimum_size = Vector2(0, 40)
+[node name="MusicValue" type="Label" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "70%"
+horizontal_alignment = 2
+
+[node name="SfxLabel" type="Label" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "EFFECTS"
+
+[node name="SfxSlider" type="HSlider" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 34)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Controls"
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.9
 
-[node name="Spacer" type="Control" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1008688452]
-custom_minimum_size = Vector2(0, 20)
+[node name="SfxValue" type="Label" parent="Center/Card/Body/Columns/Left/AudioSection/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 4
+text = "90%"
+horizontal_alignment = 2
 
-[node name="BackButton" type="Button" parent="MainPanel/MarginContainer/VBoxContainer" unique_id=1290986999]
-custom_minimum_size = Vector2(0, 40)
+[node name="ControlsSection" type="VBoxContainer" parent="Center/Card/Body/Columns"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Center/Card/Body/Columns/ControlsSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83, 0.24, 0.25, 1)
+text = "CONTROLS"
+
+[node name="ControlsGrid" type="GridContainer" parent="Center/Card/Body/Columns/ControlsSection"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="Rule2" type="ColorRect" parent="Center/Card/Body"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.29, 0.11, 0.12, 1)
+
+[node name="Footer" type="HBoxContainer" parent="Center/Card/Body"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ResetButton" type="Button" parent="Center/Card/Body/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+text = "RESET DEFAULTS"
+
+[node name="FooterSpacer" type="Control" parent="Center/Card/Body/Footer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Back"
+mouse_filter = 2
+
+[node name="BackButton" type="Button" parent="Center/Card/Body/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "BACK"

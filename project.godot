@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Chrono Blade"
+config/version="0.1.0"
 run/main_scene="uid://c1b2qouc71ng5"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
@@ -18,11 +19,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 Cooldown="*uid://cs51edpa6o7y0"
+Settings="*res://Global/settings.gd"
+RunState="*res://Global/run_state.gd"
 
 [display]
 
+window/size/viewport_width=1152
+window/size/viewport_height=648
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
@@ -31,6 +36,10 @@ enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
 [global_group]
 
 Damage_area=""
+
+[gui]
+
+theme/custom="res://UI/theme/chrono_blade_theme.tres"
 
 [input]
 
@@ -62,6 +71,11 @@ Down={
 Rewind={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":76,"key_label":0,"unicode":108,"location":0,"echo":false,"script":null)
+]
+}
+Pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":27,"location":0,"echo":false,"script":null)
 ]
 }
 

@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://UI/PauseMenu.gd" id="1_pause"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 60
+script = ExtResource("1_pause")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.01, 0.012, 0.86)
+
+[node name="Center" type="CenterContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Card" type="PanelContainer" parent="Root/Center"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_type_variation = &"CardPanel"
+
+[node name="Body" type="VBoxContainer" parent="Root/Center/Card"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Root/Center/Card/Body"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Root/Center/Card/Body"]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+text = "THE CLOCK HOLDS ITS BREATH"
+horizontal_alignment = 1
+
+[node name="Rule" type="ColorRect" parent="Root/Center/Card/Body"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.29, 0.11, 0.12, 1)
+
+[node name="StatsLabel" type="Label" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ROOMS  00      COINS  0      LEVEL  1"
+horizontal_alignment = 1
+
+[node name="Gap" type="Control" parent="Root/Center/Card/Body"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ResumeButton" type="Button" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+text = "RESUME"
+
+[node name="OptionsButton" type="Button" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+text = "OPTIONS"
+
+[node name="QuitButton" type="Button" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+text = "QUIT TO TITLE"
+
+[node name="Overlay" type="Control" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

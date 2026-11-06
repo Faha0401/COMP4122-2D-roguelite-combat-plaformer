@@ -1,15 +1,28 @@
-[gd_scene format=3 uid="uid://c0ijn4qa8eu15"]
+[gd_scene load_steps=15 format=3 uid="uid://c0ijn4qa8eu15"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_il0fu"]
-load_path = "res://.godot/imported/FreeHorrorUi.png-26ca8ca128858d7c528c32af1729ee4e.ctex"
+[ext_resource type="Script" path="res://UI/hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" path="res://Assets/UI/FreeHorrorUi.png" id="2_sheet"]
+[ext_resource type="Texture2D" path="res://Assets/UI/icons/coin.png" id="3_coin"]
+[ext_resource type="Texture2D" path="res://Assets/UI/icons/gem.png" id="4_gem"]
+[ext_resource type="Texture2D" path="res://Assets/UI/icons/shard.png" id="5_shard"]
+[ext_resource type="Texture2D" path="res://Assets/UI/icons/chrono.png" id="6_chrono"]
+[ext_resource type="Texture2D" path="res://Assets/UI/icons/pause.png" id="7_pause"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yixhe"]
-atlas = SubResource("CompressedTexture2D_il0fu")
-region = Rect2(6, 138, 52, 15)
+[sub_resource type="AtlasTexture" id="AtlasTexture_heart_full"]
+atlas = ExtResource("2_sheet")
+region = Rect2(135, 105, 18, 15)
 
-[node name="HUD" type="CanvasLayer" unique_id=1536462385]
+[sub_resource type="AtlasTexture" id="AtlasTexture_heart_empty"]
+atlas = ExtResource("2_sheet")
+region = Rect2(199, 105, 18, 15)
 
-[node name="Root" type="Control" parent="." unique_id=942850969]
+[node name="HUD" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_hud")
+heart_full = SubResource("AtlasTexture_heart_full")
+heart_empty = SubResource("AtlasTexture_heart_empty")
+
+[node name="Root" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,108 +31,277 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TopLeft" type="VBoxContainer" parent="Root" unique_id=709813224]
+[node name="TopLeft" type="PanelContainer" parent="Root"]
 layout_mode = 1
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 16.0
-offset_bottom = 16.0
-theme_override_constants/separation = 8
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 24.0
+offset_bottom = 20.0
+theme_type_variation = &"HudPanel"
 
-[node name="LevelRow" type="HBoxContainer" parent="Root/TopLeft" unique_id=2043509334]
+[node name="Stack" type="VBoxContainer" parent="Root/TopLeft"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="LevelBadge" type="Label" parent="Root/TopLeft/LevelRow" unique_id=1703975322]
+[node name="Hearts" type="HBoxContainer" parent="Root/TopLeft/Stack"]
 layout_mode = 2
-text = "Lv 1"
+theme_override_constants/separation = 6
 
-[node name="XPBar" type="ProgressBar" parent="Root/TopLeft/LevelRow" unique_id=312107661]
-custom_minimum_size = Vector2(120, 14)
+[node name="Heart0" type="TextureRect" parent="Root/TopLeft/Stack/Hearts"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 40)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart1" type="TextureRect" parent="Root/TopLeft/Stack/Hearts"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 40)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="Root/TopLeft/Stack/Hearts"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 40)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="Root/TopLeft/Stack/Hearts"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 40)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart4" type="TextureRect" parent="Root/TopLeft/Stack/Hearts"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 40)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelRow" type="HBoxContainer" parent="Root/TopLeft/Stack"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LevelLabel" type="Label" parent="Root/TopLeft/Stack/LevelRow"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-value = 40.0
+text = "LV 1"
+
+[node name="XPBar" type="ProgressBar" parent="Root/TopLeft/Stack/LevelRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 18)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"XPBar"
+value = 0.0
 show_percentage = false
 
-[node name="Resources" type="HBoxContainer" parent="Root/TopLeft" unique_id=635618184]
+[node name="Resources" type="HBoxContainer" parent="Root/TopLeft/Stack"]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 22
 
-[node name="Coins" type="HBoxContainer" parent="Root/TopLeft/Resources" unique_id=866503387]
+[node name="Coins" type="HBoxContainer" parent="Root/TopLeft/Stack/Resources"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 6
 
-[node name="Icon" type="Label" parent="Root/TopLeft/Resources/Coins" unique_id=837252848]
+[node name="Icon" type="TextureRect" parent="Root/TopLeft/Stack/Resources/Coins"]
+custom_minimum_size = Vector2(34, 34)
 layout_mode = 2
-text = "COIN"
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_coin")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Count" type="Label" parent="Root/TopLeft/Resources/Coins" unique_id=1538424370]
+[node name="CoinValue" type="Label" parent="Root/TopLeft/Stack/Resources/Coins"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "1240"
+size_flags_vertical = 4
+text = "0"
 
-[node name="Material1" type="HBoxContainer" parent="Root/TopLeft/Resources" unique_id=1417090115]
+[node name="Gems" type="HBoxContainer" parent="Root/TopLeft/Stack/Resources"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 6
 
-[node name="Icon" type="Label" parent="Root/TopLeft/Resources/Material1" unique_id=52653669]
+[node name="Icon" type="TextureRect" parent="Root/TopLeft/Stack/Resources/Gems"]
+custom_minimum_size = Vector2(34, 34)
 layout_mode = 2
-text = "MAT"
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("4_gem")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Count" type="Label" parent="Root/TopLeft/Resources/Material1" unique_id=1225983044]
+[node name="GemValue" type="Label" parent="Root/TopLeft/Stack/Resources/Gems"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "12"
+size_flags_vertical = 4
+text = "0"
 
-[node name="Material2" type="HBoxContainer" parent="Root/TopLeft/Resources" unique_id=1938536124]
+[node name="Shards" type="HBoxContainer" parent="Root/TopLeft/Stack/Resources"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 6
 
-[node name="Icon" type="Label" parent="Root/TopLeft/Resources/Material2" unique_id=1373695157]
+[node name="Icon" type="TextureRect" parent="Root/TopLeft/Stack/Resources/Shards"]
+custom_minimum_size = Vector2(34, 34)
 layout_mode = 2
-text = "GEM"
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("5_shard")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Count" type="Label" parent="Root/TopLeft/Resources/Material2" unique_id=1838614323]
+[node name="ShardValue" type="Label" parent="Root/TopLeft/Stack/Resources/Shards"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "3"
+size_flags_vertical = 4
+text = "0"
 
-[node name="TopRight" type="HBoxContainer" parent="Root" unique_id=1474350552]
+[node name="PauseButton" type="Button" parent="Root"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -16.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = 16.0
+offset_left = -100.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = 88.0
 grow_horizontal = 0
-theme_override_constants/separation = 8
+theme_type_variation = &"IconButton"
+icon = ExtResource("7_pause")
+flat = false
+icon_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="Root/TopRight" unique_id=531360077]
+[node name="RoomCard" type="PanelContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 0.0
+offset_top = 20.0
+offset_right = 0.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_type_variation = &"HudPanel"
+
+[node name="Row" type="HBoxContainer" parent="Root/RoomCard"]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_yixhe")
+theme_override_constants/separation = 14
 
-[node name="BottomRight" type="VBoxContainer" parent="Root" unique_id=816951473]
+[node name="RoomDot" type="ColorRect" parent="Root/RoomCard/Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+color = Color(0.92, 0.22, 0.22, 1)
+
+[node name="Text" type="VBoxContainer" parent="Root/RoomCard/Row"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="RoomName" type="Label" parent="Root/RoomCard/Row/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ROOM"
+
+[node name="RoomType" type="Label" parent="Root/RoomCard/Row/Text"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+theme_override_font_sizes/font_size = 24
+text = "COMBAT"
+
+[node name="Hints" type="PanelContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme_type_variation = &"HudPanel"
+
+[node name="Row" type="HBoxContainer" parent="Root/Hints"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Attack" type="Label" parent="Root/Hints/Row"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "J   ATTACK"
+
+[node name="Rewind" type="Label" parent="Root/Hints/Row"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "L   REWIND"
+
+[node name="Jump" type="Label" parent="Root/Hints/Row"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "SPACE   JUMP"
+
+[node name="Gauge" type="VBoxContainer" parent="Root"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -16.0
-offset_right = -16.0
-offset_bottom = -16.0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = -24.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/separation = 4
+theme_override_constants/separation = 8
 alignment = 2
 
-[node name="TextureButton" type="TextureButton" parent="Root/BottomRight" unique_id=699927612]
-custom_minimum_size = Vector2(156, 45)
+[node name="Header" type="HBoxContainer" parent="Root/Gauge"]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_yixhe")
-stretch_mode = 0
+alignment = 2
+theme_override_constants/separation = 10
 
-[node name="BestFloor" type="Label" parent="Root/BottomRight" unique_id=1811349783]
+[node name="Icon" type="TextureRect" parent="Root/Gauge/Header"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-text = "best: Floor 7"
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("6_chrono")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Root/Gauge/Header"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"MutedLabel"
+text = "REWIND"
+
+[node name="RewindState" type="Label" parent="Root/Gauge/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "READY"
 horizontal_alignment = 2
+
+[node name="GaugeRow" type="HBoxContainer" parent="Root/Gauge"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 2
