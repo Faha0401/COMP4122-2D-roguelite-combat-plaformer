@@ -1,0 +1,355 @@
+[gd_scene format=3 uid="uid://b3cgn37r3b3rh"]
+
+[ext_resource type="Script" uid="uid://decc1wcst32ef" path="res://UI/lobby.gd" id="1_lobby"]
+[ext_resource type="PackedScene" uid="uid://c0ijn4qa8eu15" path="res://UI/HUD.tscn" id="2_hud"]
+[ext_resource type="PackedScene" uid="uid://cdx6wxlfbttnm" path="res://Scene/Chest.tscn" id="3_chest"]
+[ext_resource type="PackedScene" uid="uid://dmxsnmsy6ur4v" path="res://Entity/Player.tscn" id="4_player"]
+[ext_resource type="PackedScene" path="res://Game/Backdrop.tscn" id="5_backdrop"]
+[ext_resource type="Texture2D" uid="uid://dta5i33sn7xwi" path="res://Assets/Scene/Backgrounds/Large Tent.png" id="6_tent"]
+[ext_resource type="Texture2D" uid="uid://nasmru41lva3" path="res://Assets/Scene/Backgrounds/Large Pine Tree.png" id="8_pine"]
+[ext_resource type="Texture2D" uid="uid://d3m4saxvd7ayq" path="res://Assets/Scene/Backgrounds/Ores.png" id="9_ores"]
+[ext_resource type="Texture2D" uid="uid://bijiyx5555cgd" path="res://Assets/Scene/Backgrounds/Tall Grass.png" id="10_grass"]
+[ext_resource type="Texture2D" uid="uid://pvhp5021cu54" path="res://Assets/Scene/Backgrounds/Angel Statue.png" id="11_statue"]
+[ext_resource type="Texture2D" uid="uid://2cghvt4yh3nc" path="res://Assets/Lobby/logs.png" id="13_logs"]
+[ext_resource type="Texture2D" uid="uid://58wi6uis3myw" path="res://Assets/Lobby/soft_glow.png" id="14_glow"]
+[ext_resource type="Texture2D" uid="uid://bqqrgg8wqmrti" path="res://Assets/Lobby/vignette.png" id="15_vignette"]
+[ext_resource type="Texture2D" uid="uid://5dstagqpl7jw" path="res://Assets/Lobby/old_man.png" id="16_man"]
+[ext_resource type="Texture2D" uid="uid://bovqbhqoh4bgy" path="res://Assets/Lobby/arrow_sign.png" id="17_arrow"]
+[ext_resource type="Texture2D" uid="uid://cnoxn8ip2tj0m" path="res://Assets/Lobby/shop_stall.png" id="20_stall"]
+
+[sub_resource type="RectangleShape2D" id="ground"]
+size = Vector2(864, 16)
+
+[sub_resource type="RectangleShape2D" id="wall"]
+size = Vector2(16, 648)
+
+[sub_resource type="CanvasItemMaterial" id="additive"]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="shop_area"]
+size = Vector2(130, 150)
+
+[sub_resource type="RectangleShape2D" id="rest_area"]
+size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="exit_area"]
+size = Vector2(30, 220)
+
+[node name="Lobby" type="Node2D" unique_id=571545090]
+script = ExtResource("1_lobby")
+
+[node name="Backdrop" parent="." unique_id=1051533939 instance=ExtResource("5_backdrop")]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1823172365]
+
+[node name="Col" type="CollisionShape2D" parent="Ground" unique_id=1446230053]
+position = Vector2(452, 645)
+shape = SubResource("ground")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=258133795]
+
+[node name="Col" type="CollisionShape2D" parent="LeftWall" unique_id=515339124]
+position = Vector2(4, 324)
+shape = SubResource("wall")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1024419621]
+
+[node name="Col" type="CollisionShape2D" parent="RightWall" unique_id=843732857]
+position = Vector2(860, 324)
+shape = SubResource("wall")
+
+[node name="FloorVis" type="ColorRect" parent="." unique_id=344007190]
+z_index = -20
+offset_top = 640.0
+offset_right = 864.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.17, 0.135, 0.085, 1)
+
+[node name="PineLeft" type="Sprite2D" parent="." unique_id=1687207528]
+modulate = Color(0.62, 0.6, 0.5, 1)
+z_index = -12
+position = Vector2(36, 552)
+texture = ExtResource("8_pine")
+
+[node name="PineRight" type="Sprite2D" parent="." unique_id=1422196782]
+modulate = Color(0.55, 0.53, 0.44, 1)
+z_index = -12
+position = Vector2(836, 560)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_pine")
+
+[node name="Statue" type="Sprite2D" parent="." unique_id=1372761998]
+modulate = Color(0.66, 0.63, 0.58, 1)
+z_index = -11
+position = Vector2(722, 606)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("11_statue")
+
+[node name="OresA" type="Sprite2D" parent="." unique_id=762088420]
+modulate = Color(0.7, 0.66, 0.58, 1)
+z_index = -6
+position = Vector2(300, 626)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("9_ores")
+
+[node name="OresB" type="Sprite2D" parent="." unique_id=123695032]
+modulate = Color(0.62, 0.58, 0.5, 1)
+z_index = -6
+position = Vector2(778, 628)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("9_ores")
+
+[node name="GrassA" type="Sprite2D" parent="." unique_id=2139190160]
+modulate = Color(0.66, 0.62, 0.46, 1)
+z_index = -2
+position = Vector2(316, 632)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("10_grass")
+
+[node name="GrassB" type="Sprite2D" parent="." unique_id=1100123133]
+modulate = Color(0.6, 0.56, 0.42, 1)
+z_index = -2
+position = Vector2(596, 634)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("10_grass")
+
+[node name="GrassC" type="Sprite2D" parent="." unique_id=404282627]
+modulate = Color(0.6, 0.56, 0.42, 1)
+z_index = -2
+position = Vector2(752, 632)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_grass")
+
+[node name="GrassD" type="Sprite2D" parent="." unique_id=416287777]
+modulate = Color(0.58, 0.54, 0.4, 1)
+z_index = -2
+position = Vector2(126, 634)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("10_grass")
+
+[node name="GrassE" type="Sprite2D" parent="." unique_id=1493096014]
+modulate = Color(0.58, 0.54, 0.4, 1)
+z_index = -2
+position = Vector2(430, 634)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_grass")
+
+[node name="GrassF" type="Sprite2D" parent="." unique_id=696207539]
+modulate = Color(0.55, 0.51, 0.38, 1)
+z_index = -2
+position = Vector2(676, 634)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("10_grass")
+
+[node name="Shop" type="Node2D" parent="." unique_id=1681121700]
+position = Vector2(150, 640)
+
+[node name="LightPool" type="Sprite2D" parent="Shop" unique_id=1950278585]
+modulate = Color(1, 0.86, 0.62, 0.4)
+material = SubResource("additive")
+position = Vector2(0, -6)
+scale = Vector2(3.6, 0.8)
+texture = ExtResource("14_glow")
+
+[node name="Stall" type="Sprite2D" parent="Shop" unique_id=1778180849]
+position = Vector2(0, -76)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("20_stall")
+
+[node name="LanternLeft" type="Sprite2D" parent="Shop" unique_id=1266033975]
+modulate = Color(1, 0.78, 0.45, 0.55)
+material = SubResource("additive")
+position = Vector2(-65, -82)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("14_glow")
+
+[node name="LanternRight" type="Sprite2D" parent="Shop" unique_id=1099808849]
+modulate = Color(1, 0.78, 0.45, 0.55)
+material = SubResource("additive")
+position = Vector2(66, -82)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("14_glow")
+
+[node name="OldMan" type="Sprite2D" parent="Shop" unique_id=1714963425]
+position = Vector2(-16, -67)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("16_man")
+centered = false
+
+[node name="ShopArea" type="Area2D" parent="Shop" unique_id=917225266]
+monitorable = false
+
+[node name="Col" type="CollisionShape2D" parent="Shop/ShopArea" unique_id=231458463]
+position = Vector2(0, -62)
+shape = SubResource("shop_area")
+
+[node name="Logs" type="Sprite2D" parent="." unique_id=545457725]
+position = Vector2(258, 629)
+texture = ExtResource("13_logs")
+
+[node name="RestTent" type="Sprite2D" parent="." unique_id=114897228]
+modulate = Color(0.82, 0.78, 0.7, 1)
+position = Vector2(470, 595)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_tent")
+
+[node name="RestPool" type="Sprite2D" parent="." unique_id=1402260461]
+modulate = Color(1, 0.82, 0.58, 0.3)
+material = SubResource("additive")
+position = Vector2(470, 634)
+scale = Vector2(3, 0.6)
+texture = ExtResource("14_glow")
+
+[node name="RestArea" type="Area2D" parent="." unique_id=1035292987]
+monitorable = false
+
+[node name="Col" type="CollisionShape2D" parent="RestArea" unique_id=1803879720]
+position = Vector2(492, 596)
+shape = SubResource("rest_area")
+
+[node name="FireGlow" type="Sprite2D" parent="." unique_id=1721722980]
+modulate = Color(1, 0.82, 0.55, 0.75)
+material = SubResource("additive")
+position = Vector2(640, 604)
+scale = Vector2(1.3, 1.1)
+texture = ExtResource("14_glow")
+
+[node name="Campfire" type="AnimatedSprite2D" parent="." unique_id=736708598]
+position = Vector2(640, 608)
+
+[node name="Chest" parent="." unique_id=171986688 instance=ExtResource("3_chest")]
+position = Vector2(556, 624)
+auto_open = false
+
+[node name="ExitSign" type="Sprite2D" parent="." unique_id=1794734633]
+z_index = 5
+position = Vector2(800, 606)
+texture = ExtResource("17_arrow")
+centered = false
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=2034669324]
+monitorable = false
+
+[node name="Col" type="CollisionShape2D" parent="ExitArea" unique_id=574817401]
+position = Vector2(838, 545)
+shape = SubResource("exit_area")
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=656822127]
+position = Vector2(340, 600)
+
+[node name="Player" parent="." unique_id=768231344 instance=ExtResource("4_player")]
+position = Vector2(340, 600)
+
+[node name="GroundLight" type="Sprite2D" parent="." unique_id=1505430150]
+modulate = Color(1, 0.82, 0.55, 0.14)
+material = SubResource("additive")
+position = Vector2(432, 636)
+scale = Vector2(9, 1.1)
+texture = ExtResource("14_glow")
+
+[node name="Vignette" type="CanvasLayer" parent="." unique_id=1195631143]
+layer = 4
+
+[node name="Root" type="Control" parent="Vignette" unique_id=1815327710]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Tex" type="TextureRect" parent="Vignette/Root" unique_id=1515592621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("15_vignette")
+expand_mode = 1
+
+[node name="HUD" parent="." unique_id=1707233164 instance=ExtResource("2_hud")]
+
+[node name="Banner" type="CanvasLayer" parent="." unique_id=368299285]
+layer = 5
+
+[node name="Root" type="Control" parent="Banner" unique_id=196820033]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Card" type="PanelContainer" parent="Banner/Root" unique_id=883264187]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_type_variation = &"HudPanel"
+
+[node name="Row" type="HBoxContainer" parent="Banner/Root/Card" unique_id=964764563]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Dot" type="ColorRect" parent="Banner/Root/Card/Row" unique_id=1524360444]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+color = Color(0.85, 0.78, 0.45, 1)
+
+[node name="Text" type="VBoxContainer" parent="Banner/Root/Card/Row" unique_id=464373600]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="Banner/Root/Card/Row/Text" unique_id=595136195]
+layout_mode = 2
+text = "THE LAST LAMP"
+
+[node name="Kind" type="Label" parent="Banner/Root/Card/Row/Text" unique_id=1429807961]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+theme_override_font_sizes/font_size = 24
+text = "WAYSTATION"
+
+[node name="Prompt" type="CanvasLayer" parent="." unique_id=58123465]
+layer = 6
+
+[node name="Root" type="Control" parent="Prompt" unique_id=1432542661]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Prompt/Root" unique_id=1102278836]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 376.0
+offset_top = 566.0
+offset_right = 776.0
+offset_bottom = 598.0
+theme_type_variation = &"MutedLabel"
+horizontal_alignment = 1
+
+[node name="Fade" type="CanvasLayer" parent="." unique_id=1521449511]
+layer = 100
+
+[node name="FadeRect" type="ColorRect" parent="Fade" unique_id=844875479]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

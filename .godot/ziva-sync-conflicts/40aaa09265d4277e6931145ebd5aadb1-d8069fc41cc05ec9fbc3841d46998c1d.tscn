@@ -1,0 +1,361 @@
+[gd_scene load_steps=23 format=3]
+
+[ext_resource type="Script" path="res://UI/lobby.gd" id="1_lobby"]
+[ext_resource type="PackedScene" path="res://UI/HUD.tscn" id="2_hud"]
+[ext_resource type="PackedScene" path="res://Scene/Chest.tscn" id="3_chest"]
+[ext_resource type="PackedScene" path="res://Entity/Player.tscn" id="4_player"]
+[ext_resource type="PackedScene" path="res://Game/Backdrop.tscn" id="5_backdrop"]
+[ext_resource type="Texture2D" path="res://Assets/Scene/Backgrounds/Large Tent.png" id="6_tent"]
+[ext_resource type="Texture2D" path="res://Assets/Scene/Backgrounds/Cooking area.png" id="7_fire"]
+[ext_resource type="Texture2D" path="res://Assets/Scene/Backgrounds/Large Pine Tree.png" id="8_pine"]
+[ext_resource type="Texture2D" path="res://Assets/Scene/Backgrounds/Ores.png" id="9_ores"]
+[ext_resource type="Texture2D" path="res://Assets/Scene/Backgrounds/Tall Grass.png" id="10_grass"]
+[ext_resource type="Texture2D" path="res://Assets/Scene/Backgrounds/Angel Statue.png" id="11_statue"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/shop_sign.png" id="12_sign"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/logs.png" id="13_logs"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/soft_glow.png" id="14_glow"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/shop_building.png" id="18_house"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/counter.png" id="19_counter"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/shop_stall.png" id="20_stall"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/vignette.png" id="15_vignette"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/old_man.png" id="16_man"]
+[ext_resource type="Texture2D" path="res://Assets/Lobby/arrow_sign.png" id="17_arrow"]
+
+[sub_resource type="RectangleShape2D" id="ground"]
+size = Vector2(864, 16)
+
+[sub_resource type="RectangleShape2D" id="wall"]
+size = Vector2(16, 648)
+
+[sub_resource type="RectangleShape2D" id="shop_area"]
+size = Vector2(130, 150)
+
+[sub_resource type="RectangleShape2D" id="rest_area"]
+size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="exit_area"]
+size = Vector2(30, 220)
+
+[sub_resource type="CanvasItemMaterial" id="additive"]
+blend_mode = 1
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_lobby")
+
+[node name="Backdrop" parent="." instance=ExtResource("5_backdrop")]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="Ground"]
+position = Vector2(432, 646)
+shape = SubResource("ground")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(4, 324)
+shape = SubResource("wall")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(860, 324)
+shape = SubResource("wall")
+
+[node name="FloorVis" type="ColorRect" parent="."]
+z_index = -20
+offset_top = 640.0
+offset_right = 864.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.17, 0.135, 0.085, 1)
+
+[node name="PineLeft" type="Sprite2D" parent="."]
+z_index = -12
+modulate = Color(0.62, 0.6, 0.5, 1)
+position = Vector2(36, 552)
+texture = ExtResource("8_pine")
+
+[node name="PineRight" type="Sprite2D" parent="."]
+z_index = -12
+modulate = Color(0.55, 0.53, 0.44, 1)
+position = Vector2(836, 560)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_pine")
+
+[node name="Statue" type="Sprite2D" parent="."]
+z_index = -11
+modulate = Color(0.66, 0.63, 0.58, 1)
+position = Vector2(722, 606)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("11_statue")
+
+[node name="OresA" type="Sprite2D" parent="."]
+z_index = -6
+modulate = Color(0.7, 0.66, 0.58, 1)
+position = Vector2(300, 626)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("9_ores")
+
+[node name="OresB" type="Sprite2D" parent="."]
+z_index = -6
+modulate = Color(0.62, 0.58, 0.5, 1)
+position = Vector2(778, 628)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("9_ores")
+
+[node name="GrassA" type="Sprite2D" parent="."]
+z_index = -2
+modulate = Color(0.66, 0.62, 0.46, 1)
+position = Vector2(316, 632)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("10_grass")
+
+[node name="GrassB" type="Sprite2D" parent="."]
+z_index = -2
+modulate = Color(0.6, 0.56, 0.42, 1)
+position = Vector2(596, 634)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("10_grass")
+
+[node name="GrassC" type="Sprite2D" parent="."]
+z_index = -2
+modulate = Color(0.6, 0.56, 0.42, 1)
+position = Vector2(752, 632)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_grass")
+
+[node name="GrassD" type="Sprite2D" parent="."]
+z_index = -2
+modulate = Color(0.58, 0.54, 0.4, 1)
+position = Vector2(126, 634)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("10_grass")
+
+[node name="GrassE" type="Sprite2D" parent="."]
+z_index = -2
+modulate = Color(0.58, 0.54, 0.4, 1)
+position = Vector2(430, 634)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_grass")
+
+[node name="GrassF" type="Sprite2D" parent="."]
+z_index = -2
+modulate = Color(0.55, 0.51, 0.38, 1)
+position = Vector2(676, 634)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("10_grass")
+
+[node name="Shop" type="Node2D" parent="."]
+position = Vector2(150, 640)
+
+[node name="LightPool" type="Sprite2D" parent="Shop"]
+material = SubResource("additive")
+modulate = Color(1, 0.86, 0.62, 0.4)
+position = Vector2(0, -6)
+scale = Vector2(3.6, 0.8)
+texture = ExtResource("14_glow")
+
+[node name="Stall" type="Sprite2D" parent="Shop"]
+position = Vector2(0, -76)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("20_stall")
+
+[node name="LanternLeft" type="Sprite2D" parent="Shop"]
+material = SubResource("additive")
+modulate = Color(1, 0.78, 0.45, 0.55)
+position = Vector2(-65, -82)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("14_glow")
+
+[node name="LanternRight" type="Sprite2D" parent="Shop"]
+material = SubResource("additive")
+modulate = Color(1, 0.78, 0.45, 0.55)
+position = Vector2(66, -82)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("14_glow")
+
+[node name="OldMan" type="Sprite2D" parent="Shop"]
+centered = false
+position = Vector2(-16, -67)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("16_man")
+
+[node name="ShopArea" type="Area2D" parent="Shop"]
+monitorable = false
+
+[node name="Col" type="CollisionShape2D" parent="Shop/ShopArea"]
+position = Vector2(0, -62)
+shape = SubResource("shop_area")
+
+[node name="Logs" type="Sprite2D" parent="."]
+position = Vector2(258, 629)
+scale = Vector2(1.0, 1.0)
+texture = ExtResource("13_logs")
+
+[node name="RestTent" type="Sprite2D" parent="."]
+modulate = Color(0.82, 0.78, 0.7, 1)
+position = Vector2(470, 595)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_tent")
+
+[node name="RestPool" type="Sprite2D" parent="."]
+material = SubResource("additive")
+modulate = Color(1, 0.82, 0.58, 0.3)
+position = Vector2(470, 634)
+scale = Vector2(3.0, 0.6)
+texture = ExtResource("14_glow")
+
+[node name="RestArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="Col" type="CollisionShape2D" parent="RestArea"]
+position = Vector2(492, 596)
+shape = SubResource("rest_area")
+
+[node name="FireGlow" type="Sprite2D" parent="."]
+material = SubResource("additive")
+modulate = Color(1, 0.82, 0.55, 0.75)
+position = Vector2(640, 604)
+scale = Vector2(1.3, 1.1)
+texture = ExtResource("14_glow")
+
+[node name="Campfire" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 608)
+scale = Vector2(1.0, 1.0)
+
+[node name="Chest" parent="." instance=ExtResource("3_chest")]
+position = Vector2(556, 624)
+auto_open = false
+
+[node name="ExitSign" type="Sprite2D" parent="."]
+z_index = 5
+centered = false
+position = Vector2(800, 606)
+texture = ExtResource("17_arrow")
+
+[node name="ExitArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="Col" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2(838, 545)
+shape = SubResource("exit_area")
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(340, 600)
+
+[node name="Player" parent="." instance=ExtResource("4_player")]
+position = Vector2(340, 600)
+
+[node name="GroundLight" type="Sprite2D" parent="."]
+material = SubResource("additive")
+modulate = Color(1, 0.82, 0.55, 0.14)
+position = Vector2(432, 636)
+scale = Vector2(9.0, 1.1)
+texture = ExtResource("14_glow")
+
+[node name="Vignette" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Root" type="Control" parent="Vignette"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Tex" type="TextureRect" parent="Vignette/Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("15_vignette")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="HUD" parent="." instance=ExtResource("2_hud")]
+
+[node name="Banner" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Root" type="Control" parent="Banner"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Card" type="PanelContainer" parent="Banner/Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_type_variation = &"HudPanel"
+
+[node name="Row" type="HBoxContainer" parent="Banner/Root/Card"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Dot" type="ColorRect" parent="Banner/Root/Card/Row"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+color = Color(0.85, 0.78, 0.45, 1)
+
+[node name="Text" type="VBoxContainer" parent="Banner/Root/Card/Row"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="Banner/Root/Card/Row/Text"]
+layout_mode = 2
+text = "THE LAST LAMP"
+
+[node name="Kind" type="Label" parent="Banner/Root/Card/Row/Text"]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+theme_override_font_sizes/font_size = 24
+text = "WAYSTATION"
+
+[node name="Prompt" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="Root" type="Control" parent="Prompt"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Prompt/Root"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 376.0
+offset_top = 566.0
+offset_right = 776.0
+offset_bottom = 598.0
+theme_type_variation = &"MutedLabel"
+horizontal_alignment = 1
+
+[node name="Fade" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="FadeRect" type="ColorRect" parent="Fade"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

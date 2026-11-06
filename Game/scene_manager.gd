@@ -27,6 +27,7 @@ var _draining := false
 
 @onready var _fade_rect: ColorRect = $Fade/FadeRect
 @onready var _hud: CanvasLayer = $HUD
+@onready var _backdrop: Node = $Backdrop
 
 
 func _ready() -> void:
@@ -73,6 +74,14 @@ func _swap_room(node_id: int) -> void:
 	add_child(room)
 	current_room = room
 	room.exit_requested.connect(_on_exit_requested)
+
+	# Rooms used to carry their own flat Background ColorRect. The shared
+	# backdrop replaces it so the parallax and weather show through.
+	var background: Node = room.get_node_or_null("Background")
+	if background != null:
+		background.visible = false
+	if _backdrop != null:
+		_backdrop.setup(room_data["type"])
 
 	_ensure_player()
 	room.add_child(player)

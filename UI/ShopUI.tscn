@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://UI/shop_ui.gd" id="1_shop"]
+
+[node name="ShopUI" type="CanvasLayer"]
+process_mode = 3
+layer = 70
+script = ExtResource("1_shop")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.01, 0.012, 0.88)
+
+[node name="Center" type="CenterContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Card" type="PanelContainer" parent="Root/Center"]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+theme_type_variation = &"CardPanel"
+
+[node name="Body" type="VBoxContainer" parent="Root/Center/Card"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Root/Center/Card/Body"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "WARES"
+horizontal_alignment = 1
+
+[node name="Sub" type="Label" parent="Root/Center/Card/Body"]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+text = "THE LAST LAMP - OPEN ALL NIGHT"
+horizontal_alignment = 1
+
+[node name="Rule" type="ColorRect" parent="Root/Center/Card/Body"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.29, 0.11, 0.12, 1)
+
+[node name="Items" type="VBoxContainer" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Status" type="Label" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+horizontal_alignment = 1
+
+[node name="CoinsLabel" type="Label" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "COINS  0"
+horizontal_alignment = 1
+
+[node name="LeaveButton" type="Button" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LEAVE"

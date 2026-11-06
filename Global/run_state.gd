@@ -52,7 +52,7 @@ func start_run() -> void:
 	is_run_active = true
 	max_hp = MAX_HEALTH
 	hp = max_hp
-	coins = 0
+	# coins deliberately survive a run: they are the lobby shop's currency.
 	gems = 0
 	shards = 0
 	level = 1

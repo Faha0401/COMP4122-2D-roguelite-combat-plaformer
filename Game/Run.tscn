@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://Game/scene_manager.gd" id="1_run"]
 [ext_resource type="PackedScene" path="res://UI/HUD.tscn" id="2_hud"]
+[ext_resource type="PackedScene" path="res://Game/Backdrop.tscn" id="3_backdrop"]
 
 [node name="Run" type="Node2D"]
 script = ExtResource("1_run")
+
+[node name="Backdrop" parent="." instance=ExtResource("3_backdrop")]
 
 [node name="HUD" parent="." instance=ExtResource("2_hud")]
 

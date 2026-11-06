@@ -1,54 +1,14 @@
-[gd_resource type="Theme" load_steps=32 format=3]
+[gd_resource type="Theme" format=3 uid="uid://c7210k1oen6lc"]
 
-[ext_resource type="Texture2D" path="res://Assets/UI/FreeHorrorUi_x3.png" id="1_sheet"]
-[ext_resource type="FontFile" path="res://UI/Fonts/Silkscreen-Regular.ttf" id="2_body"]
-[ext_resource type="FontFile" path="res://UI/Fonts/Silkscreen-Bold.ttf" id="3_body_bold"]
-[ext_resource type="FontFile" path="res://UI/Fonts/Cinzel-Variable.ttf" id="4_display"]
-[ext_resource type="Texture2D" path="res://Assets/UI/icons/slider_grabber.png" id="5_grabber"]
-[ext_resource type="Texture2D" path="res://Assets/UI/icons/arrow_down.png" id="6_arrow"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_btn"]
-atlas = ExtResource("1_sheet")
-region = Rect2(18, 702, 156, 45)
+[ext_resource type="Texture2D" uid="uid://cygx60iapseov" path="res://Assets/UI/FreeHorrorUi_x3.png" id="1_sheet"]
+[ext_resource type="FontFile" uid="uid://bmejfqseeubo8" path="res://UI/Fonts/Silkscreen-Regular.ttf" id="2_body"]
+[ext_resource type="FontFile" uid="uid://dvfwhioaltie8" path="res://UI/Fonts/Cinzel-Variable.ttf" id="4_display"]
+[ext_resource type="Texture2D" uid="uid://ba0oofisoxvjm" path="res://Assets/UI/icons/slider_grabber.png" id="5_grabber"]
+[ext_resource type="Texture2D" uid="uid://m8o1jelchtnj" path="res://Assets/UI/icons/arrow_down.png" id="6_arrow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btn_slate"]
 atlas = ExtResource("1_sheet")
 region = Rect2(210, 702, 156, 45)
-
-[sub_resource type="StyleBoxTexture" id="StyleBox_btn_normal"]
-content_margin_left = 30.0
-content_margin_top = 12.0
-content_margin_right = 30.0
-content_margin_bottom = 12.0
-texture = SubResource("AtlasTexture_btn")
-texture_margin_left = 9.0
-texture_margin_top = 9.0
-texture_margin_right = 9.0
-texture_margin_bottom = 9.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBox_btn_hover"]
-content_margin_left = 30.0
-content_margin_top = 12.0
-content_margin_right = 30.0
-content_margin_bottom = 12.0
-texture = SubResource("AtlasTexture_btn")
-texture_margin_left = 9.0
-texture_margin_top = 9.0
-texture_margin_right = 9.0
-texture_margin_bottom = 9.0
-modulate_color = Color(2.1, 1.75, 1.75, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBox_btn_pressed"]
-content_margin_left = 30.0
-content_margin_top = 15.0
-content_margin_right = 30.0
-content_margin_bottom = 9.0
-texture = SubResource("AtlasTexture_btn")
-texture_margin_left = 9.0
-texture_margin_top = 9.0
-texture_margin_right = 9.0
-texture_margin_bottom = 9.0
-modulate_color = Color(0.62, 0.62, 0.62, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBox_btn_disabled"]
 content_margin_left = 30.0
@@ -82,20 +42,44 @@ expand_margin_top = 6.0
 expand_margin_right = 6.0
 expand_margin_bottom = 6.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_panel"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_btn"]
+atlas = ExtResource("1_sheet")
+region = Rect2(18, 702, 156, 45)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_btn_hover"]
 content_margin_left = 30.0
-content_margin_top = 27.0
+content_margin_top = 12.0
 content_margin_right = 30.0
-content_margin_bottom = 27.0
-bg_color = Color(0.055, 0.035, 0.039, 0.96)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.227, 0.09, 0.098, 1)
-shadow_color = Color(0, 0, 0, 0.6)
-shadow_size = 18
-shadow_offset = Vector2(0, 6)
+content_margin_bottom = 12.0
+texture = SubResource("AtlasTexture_btn")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(2.1, 1.75, 1.75, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_btn_normal"]
+content_margin_left = 30.0
+content_margin_top = 12.0
+content_margin_right = 30.0
+content_margin_bottom = 12.0
+texture = SubResource("AtlasTexture_btn")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_btn_pressed"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 9.0
+texture = SubResource("AtlasTexture_btn")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(0.62, 0.62, 0.62, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_card"]
 content_margin_left = 36.0
@@ -112,29 +96,75 @@ shadow_color = Color(0, 0, 0, 0.65)
 shadow_size = 24
 shadow_offset = Vector2(0, 9)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_icon_normal"]
-content_margin_left = 12.0
-content_margin_top = 8.0
-content_margin_right = 12.0
-content_margin_bottom = 8.0
-bg_color = Color(0.035, 0.022, 0.026, 0.55)
+[sub_resource type="StyleBoxFlat" id="StyleBox_bar_bg"]
+bg_color = Color(0.043, 0.027, 0.031, 0.9)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.227, 0.09, 0.098, 0.75)
+border_color = Color(0.192, 0.078, 0.086, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_icon_hover"]
-content_margin_left = 12.0
-content_margin_top = 8.0
-content_margin_right = 12.0
-content_margin_bottom = 8.0
-bg_color = Color(0.42, 0.1, 0.11, 0.85)
+[sub_resource type="StyleBoxFlat" id="StyleBox_bar_chrono"]
+bg_color = Color(0.792, 0.765, 0.706, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.72, 0.2, 0.21, 1)
+border_color = Color(0.98, 0.96, 0.92, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBox_rule"]
+color = Color(0.29, 0.11, 0.12, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_slider_fill"]
+content_margin_top = 9.0
+content_margin_bottom = 9.0
+bg_color = Color(0.69, 0.165, 0.192, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.227, 0.09, 0.098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_slider_fill_hl"]
+content_margin_top = 9.0
+content_margin_bottom = 9.0
+bg_color = Color(0.85, 0.24, 0.26, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.94, 0.42, 0.4, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_slider_bg"]
+content_margin_top = 9.0
+content_margin_bottom = 9.0
+bg_color = Color(0.043, 0.027, 0.031, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.192, 0.078, 0.086, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_bar_hp"]
+bg_color = Color(0.72, 0.13, 0.16, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.34, 0.33, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_hud"]
+content_margin_left = 20.0
+content_margin_top = 14.0
+content_margin_right = 20.0
+content_margin_bottom = 14.0
+bg_color = Color(0.035, 0.022, 0.026, 0.45)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.227, 0.09, 0.098, 0.6)
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_icon_pressed"]
 content_margin_left = 12.0
@@ -160,85 +190,51 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.851, 0.808, 0.71, 0.6)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_hud"]
-content_margin_left = 20.0
-content_margin_top = 14.0
-content_margin_right = 20.0
-content_margin_bottom = 14.0
-bg_color = Color(0.035, 0.022, 0.026, 0.45)
+[sub_resource type="StyleBoxFlat" id="StyleBox_icon_hover"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.42, 0.1, 0.11, 0.85)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.227, 0.09, 0.098, 0.6)
+border_color = Color(0.72, 0.2, 0.21, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_bar_bg"]
-bg_color = Color(0.043, 0.027, 0.031, 0.9)
+[sub_resource type="StyleBoxFlat" id="StyleBox_icon_normal"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.035, 0.022, 0.026, 0.55)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.192, 0.078, 0.086, 1)
+border_color = Color(0.227, 0.09, 0.098, 0.75)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_bar_hp"]
-bg_color = Color(0.72, 0.13, 0.16, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9, 0.34, 0.33, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_bar_xp"]
-bg_color = Color(0.788, 0.573, 0.153, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.96, 0.79, 0.36, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_bar_chrono"]
-bg_color = Color(0.792, 0.765, 0.706, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.98, 0.96, 0.92, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_slider_bg"]
-content_margin_top = 9.0
-content_margin_bottom = 9.0
-bg_color = Color(0.043, 0.027, 0.031, 0.95)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.192, 0.078, 0.086, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_slider_fill"]
-content_margin_top = 9.0
-content_margin_bottom = 9.0
-bg_color = Color(0.69, 0.165, 0.192, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[sub_resource type="StyleBoxFlat" id="StyleBox_panel"]
+content_margin_left = 30.0
+content_margin_top = 27.0
+content_margin_right = 30.0
+content_margin_bottom = 27.0
+bg_color = Color(0.055, 0.035, 0.039, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(0.227, 0.09, 0.098, 1)
+shadow_size = 18
+shadow_offset = Vector2(0, 6)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_slider_fill_hl"]
-content_margin_top = 9.0
-content_margin_bottom = 9.0
-bg_color = Color(0.85, 0.24, 0.26, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.94, 0.42, 0.4, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBox_empty"]
-
-[sub_resource type="StyleBoxLine" id="StyleBox_rule"]
-color = Color(0.29, 0.11, 0.12, 1)
-thickness = 2
+[sub_resource type="StyleBoxFlat" id="StyleBox_menu_hover"]
+bg_color = Color(0.42, 0.1, 0.11, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.16, 0.17, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_popup"]
 content_margin_left = 12.0
@@ -252,13 +248,13 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.29, 0.11, 0.12, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_menu_hover"]
-bg_color = Color(0.42, 0.1, 0.11, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.6, 0.16, 0.17, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBox_bar_xp"]
+bg_color = Color(0.788, 0.573, 0.153, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.96, 0.79, 0.36, 1)
 
 [resource]
 default_font = ExtResource("2_body")
@@ -279,6 +275,13 @@ CardPanel/styles/panel = SubResource("StyleBox_card")
 ChronoBar/base_type = &"ProgressBar"
 ChronoBar/styles/background = SubResource("StyleBox_bar_bg")
 ChronoBar/styles/fill = SubResource("StyleBox_bar_chrono")
+HSeparator/constants/separation = 12
+HSeparator/styles/separator = SubResource("StyleBox_rule")
+HSlider/constants/center_grabber = 1
+HSlider/icons/grabber = ExtResource("5_grabber")
+HSlider/styles/grabber_area = SubResource("StyleBox_slider_fill")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBox_slider_fill_hl")
+HSlider/styles/slider = SubResource("StyleBox_slider_bg")
 HeadingLabel/base_type = &"Label"
 HeadingLabel/colors/font_color = Color(0.851, 0.824, 0.776, 1)
 HeadingLabel/font_sizes/font_size = 40
@@ -286,15 +289,8 @@ HeadingLabel/fonts/font = ExtResource("4_display")
 HealthBar/base_type = &"ProgressBar"
 HealthBar/styles/background = SubResource("StyleBox_bar_bg")
 HealthBar/styles/fill = SubResource("StyleBox_bar_hp")
-HSeparator/constants/separation = 12
-HSeparator/styles/separator = SubResource("StyleBox_rule")
 HudPanel/base_type = &"PanelContainer"
 HudPanel/styles/panel = SubResource("StyleBox_hud")
-HSlider/constants/center_grabber = 1
-HSlider/icons/grabber = ExtResource("5_grabber")
-HSlider/styles/grabber_area = SubResource("StyleBox_slider_fill")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBox_slider_fill_hl")
-HSlider/styles/slider = SubResource("StyleBox_slider_bg")
 IconButton/base_type = &"Button"
 IconButton/styles/disabled = SubResource("StyleBox_icon_pressed")
 IconButton/styles/focus = SubResource("StyleBox_icon_focus")

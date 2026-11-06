@@ -1,12 +1,13 @@
 extends Control
 ## Title screen: PLAY / OPTIONS / QUIT over the parallax backdrop.
 ##
-## PLAY hands control to Game/Run.tscn. OPTIONS is opened as an overlay instead
+## PLAY drops into the waystation (UI/Lobby.tscn); the run starts in-world from
+## there by walking into the arrow, never from a button. OPTIONS is opened as an overlay instead
 ## of a scene swap, so the backdrop (and the music) never stop; the same overlay
 ## is reused by the pause menu, which is why UI/OptionsMenu.tscn is a Control
 ## with a `closed` signal rather than a full screen scene.
 
-const RUN_SCENE := "res://Game/Run.tscn"
+const LOBBY_SCENE := "res://UI/Lobby.tscn"
 const OPTIONS_SCENE := preload("res://UI/OptionsMenu.tscn")
 const FADE_OUT_TIME := 0.4
 const TITLE_FADE_TIME := 0.7
@@ -62,7 +63,7 @@ func _breath() -> void:
 # ---------------------------------------------------------------------------
 
 func _on_play_pressed() -> void:
-	_leave_to(RUN_SCENE)
+	_leave_to(LOBBY_SCENE)
 
 
 func _on_options_pressed() -> void:

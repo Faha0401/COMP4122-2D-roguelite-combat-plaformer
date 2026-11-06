@@ -9,6 +9,7 @@ extends Node
 
 const MENU_SCENE := "res://UI/Menu.tscn"
 const RUN_SCENE := "res://Game/Run.tscn"
+const LOBBY_SCENE := "res://UI/Lobby.tscn"
 
 var _failures := 0
 
@@ -17,7 +18,8 @@ func _ready() -> void:
 	await _test_scenes_load()
 	await _test_run_and_pause()
 	await _test_death_and_game_over()
-	await _test_menu_to_run()
+	await _test_lobby_and_shop()
+	await _test_menu_to_lobby()
 
 	if _failures == 0:
 		print("UI FLOW TEST: OK")
@@ -42,7 +44,8 @@ func _wait(frames: int) -> void:
 func _test_scenes_load() -> void:
 	print("scenes load:")
 	for path in [MENU_SCENE, "res://UI/OptionsMenu.tscn", "res://UI/HUD.tscn",
-			"res://UI/PauseMenu.tscn", "res://UI/GameOver.tscn"]:
+			"res://UI/PauseMenu.tscn", "res://UI/GameOver.tscn",
+			LOBBY_SCENE, "res://UI/ShopUI.tscn"]:
 		var packed: PackedScene = load(path)
 		_check(packed != null, path)
 		if packed == null:
@@ -56,10 +59,41 @@ func _test_scenes_load() -> void:
 	_check(InputMap.has_action("Pause"), "Pause input action exists")
 
 
+## The waystation: chest pays out, the shop pauses the tree and releases it.
+func _test_lobby_and_shop() -> void:
+	print("lobby + shop:")
+	var lobby: Node = load(LOBBY_SCENE).instantiate()
+	add_child(lobby)
+	await _wait(10)
+
+	_check(lobby.get("player") != null or lobby.get_node_or_null("Player") != null,
+			"lobby spawns the player")
+	var coins_before := RunState.coins
+	lobby.call("_on_chest_opened")
+	_check(RunState.coins == coins_before + 25, "chest pays 25 coins")
+
+	lobby.call("open_shop")
+	await _wait(3)
+	_check(get_tree().paused, "shop pauses the tree")
+
+	var shop: Node = null
+	for child in lobby.get_children():
+		if child.name.begins_with("ShopUI"):
+			shop = child
+	_check(shop != null, "shop overlay added")
+	if shop != null:
+		shop.call("_close")
+		await _wait(3)
+	_check(not get_tree().paused, "closing the shop unpauses")
+
+	lobby.queue_free()
+	await _wait(3)
+
+
 ## The one path a player is guaranteed to take: pressing PLAY on the title
 ## screen. It is checked last, because it frees everything before it.
-func _test_menu_to_run() -> void:
-	print("menu -> run:")
+func _test_menu_to_lobby() -> void:
+	print("menu -> lobby:")
 	var menu: Control = load(MENU_SCENE).instantiate()
 	get_tree().root.add_child(menu)
 	get_tree().current_scene = menu
@@ -76,7 +110,7 @@ func _test_menu_to_run() -> void:
 	await _wait(10)
 
 	var current := get_tree().current_scene
-	_check(current != null and current.name == "Run", "PLAY loads the run scene")
+	_check(current != null and current.name == "Lobby", "PLAY loads the hub, not the run")
 
 	# the menu is freed by the swap; do not touch `menu` below this line
 	if current != null:

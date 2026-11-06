@@ -76,7 +76,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(340, 58)
 layout_mode = 2
 size_flags_horizontal = 4
-focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_top = NodePath("../QuitGameButton")
 focus_neighbor_bottom = NodePath("../OptionsButton")
 text = "RESUME"
 
@@ -86,17 +86,35 @@ custom_minimum_size = Vector2(340, 58)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../ResumeButton")
-focus_neighbor_bottom = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../LobbyButton")
 text = "OPTIONS"
+
+[node name="LobbyButton" type="Button" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+text = "RETURN TO LOBBY"
 
 [node name="QuitButton" type="Button" parent="Root/Center/Card/Body"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(340, 58)
 layout_mode = 2
 size_flags_horizontal = 4
-focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_top = NodePath("../LobbyButton")
+focus_neighbor_bottom = NodePath("../QuitGameButton")
+text = "BACK TO MENU"
+
+[node name="QuitGameButton" type="Button" parent="Root/Center/Card/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../ResumeButton")
-text = "QUIT TO TITLE"
+text = "QUIT GAME"
 
 [node name="Overlay" type="Control" parent="Root"]
 unique_name_in_owner = true

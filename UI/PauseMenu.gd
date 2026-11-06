@@ -5,10 +5,13 @@ extends CanvasLayer
 
 const OPTIONS_SCENE := preload("res://UI/OptionsMenu.tscn")
 const MENU_SCENE := "res://UI/Menu.tscn"
+const LOBBY_SCENE := "res://UI/Lobby.tscn"
 
 @onready var _resume_button: Button = %ResumeButton
 @onready var _options_button: Button = %OptionsButton
+@onready var _lobby_button: Button = %LobbyButton
 @onready var _quit_button: Button = %QuitButton
+@onready var _quit_game_button: Button = %QuitGameButton
 @onready var _stats_label: Label = %StatsLabel
 @onready var _card: Control = %Card
 @onready var _overlay: Control = %Overlay
@@ -19,7 +22,9 @@ var _options_screen: Control = null
 func _ready() -> void:
 	_resume_button.pressed.connect(resume_game)
 	_options_button.pressed.connect(_open_options)
+	_lobby_button.pressed.connect(_return_to_lobby)
 	_quit_button.pressed.connect(_quit_to_title)
+	_quit_game_button.pressed.connect(_quit_game)
 
 	_stats_label.text = "ROOMS  %02d      COINS  %d      LEVEL  %d" % [
 		RunState.rooms_entered, RunState.coins, RunState.level,
@@ -65,3 +70,15 @@ func _on_options_closed() -> void:
 func _quit_to_title() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file(MENU_SCENE)
+
+
+## Abandon the run and go back to the waystation. Coins survive; the body and
+## the run do not.
+func _return_to_lobby() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file(LOBBY_SCENE)
+
+
+func _quit_game() -> void:
+	get_tree().paused = false
+	get_tree().quit()

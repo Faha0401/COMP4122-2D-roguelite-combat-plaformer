@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://Game/backdrop.gd" id="1_backdrop"]
+[ext_resource type="Texture2D" path="res://Assets/FX/weather/rain_streak.png" id="2_rain"]
+[ext_resource type="Texture2D" path="res://Assets/FX/weather/snowflake.png" id="3_snow"]
+[ext_resource type="Texture2D" path="res://Assets/FX/weather/leaf.png" id="4_leaf"]
+[ext_resource type="Texture2D" path="res://Assets/FX/white.png" id="5_white"]
+
+[node name="Backdrop" type="Node"]
+script = ExtResource("1_backdrop")
+
+[node name="Scenery" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Root" type="Control" parent="Scenery"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Sky" type="ColorRect" parent="Scenery/Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.08, 0.08, 0.05, 1)
+
+[node name="Layers" type="Node2D" parent="Scenery/Root"]
+
+[node name="GroundFill" type="Sprite2D" parent="Scenery/Root"]
+z_index = 50
+centered = false
+texture = ExtResource("5_white")
+color = Color(0.17, 0.135, 0.085, 1)
+
+[node name="Weather" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Root" type="Control" parent="Weather"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Rain" type="CPUParticles2D" parent="Weather/Root"]
+position = Vector2(576, -40)
+emitting = false
+amount = 520
+lifetime = 1.4
+preprocess = 1.2
+texture = ExtResource("2_rain")
+emission_shape = 3
+emission_rect_extents = Vector2(780, 40)
+direction = Vector2(0.15, 1)
+spread = 2.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 900.0
+initial_velocity_max = 1200.0
+scale_amount_min = 0.8
+scale_amount_max = 1.4
+color = Color(0.55, 0.62, 0.72, 0.5)
+
+[node name="Snow" type="CPUParticles2D" parent="Weather/Root"]
+position = Vector2(576, 300)
+emitting = false
+amount = 420
+lifetime = 7.0
+preprocess = 5.0
+texture = ExtResource("3_snow")
+emission_shape = 3
+emission_rect_extents = Vector2(620, 330)
+direction = Vector2(0, 1)
+spread = 12.0
+gravity = Vector2(6, 14)
+initial_velocity_min = 18.0
+initial_velocity_max = 48.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(0.9, 0.93, 0.96, 0.75)
+
+[node name="Leaves" type="CPUParticles2D" parent="Weather/Root"]
+position = Vector2(576, 280)
+emitting = false
+amount = 110
+lifetime = 9.0
+preprocess = 6.0
+texture = ExtResource("4_leaf")
+emission_shape = 3
+emission_rect_extents = Vector2(640, 320)
+direction = Vector2(1, 0.4)
+spread = 22.0
+gravity = Vector2(10, 26)
+initial_velocity_min = 26.0
+initial_velocity_max = 64.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+scale_amount_min = 1.2
+scale_amount_max = 2.2
+color = Color(0.85, 0.62, 0.33, 0.85)
+
+[node name="Flash" type="ColorRect" parent="Weather/Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.92, 0.9, 1, 0)
